@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import ThreeScene from './components/ThreeScene';
 import ScrollEffects from './components/ScrollEffects';
 import Navbar from './components/Navbar';
@@ -11,7 +11,28 @@ import EducationSection from './components/EducationSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 
+const THEME_KEY = 'sv-portfolio-theme';
+
 export default function App() {
+  const [theme, setTheme] = useState(() => {
+    try {
+      return localStorage.getItem(THEME_KEY) || 'dark';
+    } catch {
+      return 'dark';
+    }
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    try {
+      localStorage.setItem(THEME_KEY, theme);
+    } catch {
+      /* ignore */
+    }
+  }, [theme]);
+
+  const toggleTheme = () => setTheme((t) => (t === 'dark' ? 'light' : 'dark'));
+
   // Kick off the reveal animation once sections are mounted
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -39,7 +60,7 @@ export default function App() {
       {/* Interactive overlays */}
       <ScrollEffects />
 
-      <Navbar />
+      <Navbar theme={theme} onToggleTheme={toggleTheme} />
 
       <main className="relative z-10">
         <Hero />

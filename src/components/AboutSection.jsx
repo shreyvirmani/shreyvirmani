@@ -1,111 +1,89 @@
 import React from 'react';
-import { MapPin, Mail, Sparkles, Award, Terminal, Brain } from 'lucide-react';
+import { Sparkles, Database, Layers, BrainCircuit, ArrowUpRight } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
+import SectionHeading from './SectionHeading';
+import TiltCard from './TiltCard';
 
 export default function AboutSection() {
   const { personal } = portfolioData;
 
   const pillars = [
-    {
-      title: 'Generative AI & LLM Systems',
-      description: 'Designing production-grade multi-agent architectures, structured prompting, and autonomous sequential workflows with Google Gemini.',
-      icon: Sparkles,
-      color: 'text-cyan-400',
-      bg: 'bg-cyan-500/10 border-cyan-500/20',
-    },
-    {
-      title: 'RAG & Vector Retrieval',
-      description: 'Building high-accuracy semantic retrieval pipelines utilizing LangChain, FAISS vector stores, Hugging Face embeddings, and hybrid chunking.',
-      icon: Brain,
-      color: 'text-indigo-400',
-      bg: 'bg-indigo-500/10 border-indigo-500/20',
-    },
-    {
-      title: 'Full-Stack Product Engineering',
-      description: 'End-to-end product delivery combining high-throughput FastAPI backends, Next.js/React frontends, PostgreSQL databases, and modern deployment.',
-      icon: Terminal,
-      color: 'text-emerald-400',
-      bg: 'bg-emerald-500/10 border-emerald-500/20',
-    },
+    { icon: BrainCircuit, title: 'Generative AI & Agents', text: 'Multi-agent LLM workflows, prompt engineering, and orchestration.' },
+    { icon: Database, title: 'RAG & NLP', text: 'Vector search, FAISS, embeddings, and grounded document intelligence.' },
+    { icon: Layers, title: 'Full-Stack AI', text: 'LLM backends (FastAPI) paired with modern React/Next.js frontends.' },
+    { icon: Sparkles, title: 'Productization', text: 'From AI prototypes to deployable, monetized products on Vercel/Railway.' },
   ];
 
   return (
-    <section id="about" className="py-20 relative">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Section Title */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-mono mb-3 border border-cyan-500/20">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Profile & Background</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
-            About Me
-          </h2>
-          <p className="text-slate-400 text-base mt-2">
-            AI/ML-focused engineer and product builder bridging deep model capabilities with production software.
-          </p>
-        </div>
+    <section id="about" className="relative py-20 md:py-28">
+      <div className="container mx-auto px-4 md:px-6">
+        <SectionHeading
+          eyebrow="About Me"
+          title="Engineer, builder, and problem-solver"
+        />
 
-        {/* Bio Card */}
-        <div className="p-6 sm:p-8 rounded-3xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-xl shadow-2xl mb-12">
-          <p className="text-slate-300 leading-relaxed text-base sm:text-lg mb-6">
-            {personal.bio}
-          </p>
-
-          <div className="grid sm:grid-cols-2 gap-4 pt-4 border-t border-slate-800/80">
-            <div className="flex items-center gap-3 p-3 rounded-2xl bg-slate-950/60 border border-slate-800/60">
-              <div className="p-2.5 rounded-xl bg-cyan-500/10 text-cyan-400">
-                <MapPin className="w-5 h-5" />
-              </div>
-              <div>
-                <span className="text-xs text-slate-400 block font-mono">Location</span>
-                <span className="text-sm font-semibold text-white">{personal.location}</span>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3 p-3 rounded-2xl bg-slate-950/60 border border-slate-800/60">
-              <div className="p-2.5 rounded-xl bg-indigo-500/10 text-indigo-400">
-                <Mail className="w-5 h-5" />
-              </div>
-              <div className="min-w-0">
-                <span className="text-xs text-slate-400 block font-mono">Email</span>
-                <a
-                  href={`mailto:${personal.email}`}
-                  className="text-sm font-semibold text-cyan-400 hover:underline truncate block"
-                >
-                  {personal.email}
-                </a>
-              </div>
+        <div className="grid lg:grid-cols-5 gap-8">
+          {/* Narrative */}
+          <div className="lg:col-span-3 space-y-5">
+            <p className="text-slate-300 leading-relaxed text-lg">
+              {personal.bio}
+            </p>
+            <p className="text-slate-400 leading-relaxed">
+              I bring hands-on experience across the complete AI application lifecycle — data processing, NLP,
+              embeddings, retrieval, LLM integration, multi-agent workflows, backend APIs, database integration,
+              deployment, and productization — with a strong track record in hackathons and student leadership.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-4 pt-4">
+              {pillars.map((p, i) => {
+                const Icon = p.icon;
+                return (
+                  <div key={i} className="glass glass-hover rounded-2xl p-5">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500/15 to-indigo-500/15 border border-cyan-400/20 flex items-center justify-center text-cyan-400 mb-3">
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    <h4 className="text-white font-semibold mb-1">{p.title}</h4>
+                    <p className="text-sm text-slate-400">{p.text}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
-        </div>
 
-        {/* 3 Core Pillars */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {pillars.map((pillar, idx) => {
-            const Icon = pillar.icon;
-            return (
-              <div
-                key={idx}
-                className="p-6 rounded-3xl bg-slate-900/40 border border-slate-800/80 hover:border-cyan-500/30 transition-all duration-300 shadow-xl"
-              >
-                <div className={`w-10 h-10 rounded-2xl flex items-center justify-center mb-4 border ${pillar.bg}`}>
-                  <Icon className={`w-5 h-5 ${pillar.color}`} />
+          {/* Education / highlight card */}
+          <div className="lg:col-span-2">
+            <TiltCard className="glass glass-hover rounded-3xl p-6 h-full">
+              <div className="absolute top-0 right-0 w-56 h-56 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none -z-10" />
+              <span className="text-[11px] font-mono uppercase tracking-wider text-indigo-300">Currently</span>
+              <h3 className="mt-2 text-white font-bold text-xl leading-snug">
+                B.Tech in Electronics & Communication
+              </h3>
+              <p className="text-sm text-slate-400 mt-1">
+                Maharaja Surajmal Institute of Technology, New Delhi
+              </p>
+              <div className="mt-5 space-y-3">
+                <div className="flex items-center justify-between rounded-xl px-4 py-3 bg-white/5 border border-white/5">
+                  <span className="text-sm text-slate-400">CGPA</span>
+                  <span className="font-mono font-bold text-cyan-300">8.197</span>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">
-                  {pillar.title}
-                </h3>
-                <p className="text-sm text-slate-400 leading-relaxed">
-                  {pillar.description}
-                </p>
+                <div className="flex items-center justify-between rounded-xl px-4 py-3 bg-white/5 border border-white/5">
+                  <span className="text-sm text-slate-400">Graduating</span>
+                  <span className="font-mono font-bold text-indigo-300">2028</span>
+                </div>
+                <div className="flex items-center justify-between rounded-xl px-4 py-3 bg-white/5 border border-white/5">
+                  <span className="text-sm text-slate-400">Focus</span>
+                  <span className="text-sm font-medium text-slate-200">ML &amp; Computing</span>
+                </div>
               </div>
-            );
-          })}
+              <a
+                href="#education"
+                className="mt-6 inline-flex items-center gap-1.5 text-sm text-cyan-400 hover:text-cyan-300 font-medium"
+              >
+                View education details <ArrowUpRight className="w-4 h-4" />
+              </a>
+            </TiltCard>
+          </div>
         </div>
-
       </div>
     </section>
   );
 }
-

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 const LINKS = [
@@ -10,7 +10,7 @@ const LINKS = [
   { name: 'Contact', href: '#contact' },
 ];
 
-export default function Navbar() {
+export default function Navbar({ theme = 'dark', onToggleTheme }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -29,8 +29,12 @@ export default function Navbar() {
         }
       >
         <a href="#home" className="font-semibold text-white tracking-tight flex items-center gap-2 shrink-0">
-          <span className="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center text-xs font-bold">
-            SV
+          <span className="w-9 h-9 rounded-full overflow-hidden ring-2 ring-cyan-400/40 flex items-center justify-center">
+            <img
+              src="/profile.jpg"
+              alt={portfolioData.personal.name}
+              className="w-full h-full object-cover"
+            />
           </span>
           <span className="hidden sm:inline text-[15px]">{portfolioData.personal.name}</span>
         </a>
@@ -48,6 +52,13 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-2">
+          <button
+            onClick={onToggleTheme}
+            aria-label="Toggle theme"
+            className="p-2 rounded-full text-slate-300 hover:text-white hover:bg-white/5 transition-colors"
+          >
+            {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+          </button>
           <a
             href="#contact"
             className="hidden sm:inline-flex items-center px-4 py-2 rounded-full text-sm font-medium text-white bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 shadow-lg shadow-indigo-500/25 transition-all hover:shadow-indigo-400/40"
