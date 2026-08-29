@@ -11,6 +11,7 @@ export const portfolioData = {
     github: "https://github.com/shreyvirmani",
     githubUsername: "shreyvirmani",
     linkedin: "https://www.linkedin.com/in/shrey-virmani",
+    instagram: "https://www.instagram.com/shrey_virmani",
   },
   
   stats: [

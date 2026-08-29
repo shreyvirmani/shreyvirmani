@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowRight, ExternalLink, Mail, MapPin } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
-import { GithubIcon, LinkedinIcon } from './Icons';
+import { GithubIcon, LinkedinIcon, InstagramIcon } from './Icons';
 
 const ROLES = [
   'AI & Machine Learning Engineer',
@@ -101,6 +101,10 @@ export default function Hero() {
             <a href={personal.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn"
                className="p-2.5 rounded-xl glass text-slate-300 hover:text-white hover:border-indigo-400/40 transition-all">
               <LinkedinIcon className="w-5 h-5" />
+            </a>
+            <a href={personal.instagram} target="_blank" rel="noreferrer" aria-label="Instagram"
+               className="p-2.5 rounded-xl glass text-slate-300 hover:text-white hover:border-pink-400/40 transition-all">
+              <InstagramIcon className="w-5 h-5" />
             </a>
             <span className="inline-flex items-center gap-1.5 text-sm text-slate-400">
               <MapPin className="w-4 h-4 text-cyan-400" />
