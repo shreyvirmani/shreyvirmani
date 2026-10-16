@@ -13,15 +13,45 @@ export default function ContactSection() {
   const [copied, setCopied] = useState(false);
   const [status, setStatus] = useState('idle'); // idle | sending | success | error
 
-  const copyEmail = () => {
-    navigator.clipboard.writeText(personal.email).then(() => {
+  const copyEmail = async () => {
+    const fallbackCopy = () => {
+      const textarea = document.createElement('textarea');
+      textarea.value = personal.email;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      const ok = document.execCommand('copy');
+      document.body.removeChild(textarea);
+      return ok;
+    };
+
+    let success = false;
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(personal.email);
+        success = true;
+      } else {
+        success = fallbackCopy();
+      }
+    } catch {
+      try {
+        success = fallbackCopy();
+      } catch {
+        success = false;
+      }
+    }
+
+    if (success) {
       setCopied(true);
       setTimeout(() => setCopied(false), 1800);
-    });
+    }
   };
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    if (status === 'sending') return;
     const form = e.target;
     const data = new FormData(form);
     setStatus('sending');
@@ -69,11 +99,11 @@ export default function ContactSection() {
             <div className="space-y-3">
               {infoCards.map((card, i) => {
                 const Icon = card.icon;
+                const ActionIcon = card.actionIcon;
                 return (
                   <div
                     key={i}
-                    onClick={card.action}
-                    className={`glass glass-hover rounded-2xl p-4 flex items-center gap-4 ${card.action ? 'cursor-pointer' : ''}`}
+                    className="glass glass-hover rounded-2xl p-4 flex items-center gap-4"
                   >
                     <div className={`p-2.5 rounded-xl bg-white/5 border border-white/10 ${card.color}`}>
                       <Icon className="w-5 h-5" />
@@ -83,8 +113,13 @@ export default function ContactSection() {
                       <div className="text-sm font-medium text-white truncate">{card.value}</div>
                     </div>
                     {card.action && (
-                      <button className="inline-flex items-center gap-1 text-xs font-mono text-slate-400 hover:text-cyan-300">
-                        <card.actionIcon className="w-3.5 h-3.5" />
+                      <button
+                        type="button"
+                        onClick={card.action}
+                        aria-label={`Copy email address ${personal.email}`}
+                        className="inline-flex items-center gap-1 text-xs font-mono text-slate-400 hover:text-cyan-300"
+                      >
+                        {ActionIcon && <ActionIcon className="w-3.5 h-3.5" />}
                         {card.actionLabel}
                       </button>
                     )}
@@ -106,7 +141,11 @@ export default function ContactSection() {
           </div>
 
           {/* Right form */}
-          <form onSubmit={onSubmit} className="glass rounded-3xl p-6 sm:p-8 space-y-5 shadow-2xl">
+          <form
+            onSubmit={onSubmit}
+            onChange={() => setStatus((s) => (s === 'success' || s === 'error' ? 'idle' : s))}
+            className="glass rounded-3xl p-6 sm:p-8 space-y-5 shadow-2xl"
+          >
             <div>
               <label htmlFor="name" className="block text-xs font-mono text-slate-400 mb-1.5 uppercase tracking-wider">Name</label>
               <input
@@ -141,8 +180,18 @@ export default function ContactSection() {
               />
             </div>
 
+            <div aria-live="polite" className="sr-only">
+              {status === 'sending'
+                ? 'Sending message'
+                : status === 'success'
+                  ? 'Message sent successfully'
+                  : status === 'error'
+                    ? 'Message failed to send. Please try again.'
+                    : ''}
+            </div>
+
             {status === 'error' && (
-              <p className="flex items-center gap-2 text-sm text-red-400">
+              <p role="alert" className="flex items-center gap-2 text-sm text-red-400">
                 <AlertCircle className="w-4 h-4" /> Something went wrong. Please try again.
               </p>
             )}

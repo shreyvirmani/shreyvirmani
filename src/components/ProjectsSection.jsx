@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sparkles, ExternalLink, ArrowUpRight } from 'lucide-react';
+import { ExternalLink, ArrowUpRight } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 import { GithubIcon } from './Icons';
 import SectionHeading from './SectionHeading';
@@ -31,13 +31,23 @@ export default function ProjectsSection() {
                 className={`reveal group glass glass-hover rounded-3xl p-5 flex flex-col h-full ${isFeatured ? 'border-cyan-400/10' : ''}`}
                 style={{ transitionDelay: `${(i % 3) * 70}ms` }}
               >
-                {isFeatured && (
-                  <div className="mb-2 inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-mono bg-cyan-500/10 text-cyan-300 border border-cyan-400/20">
-                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-                    Featured
+                {(isFeatured || project.status) && (
+                  <div className="mb-2 flex flex-wrap items-center gap-2">
+                    {isFeatured && (
+                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-mono bg-cyan-500/10 text-cyan-300 border border-cyan-400/20">
+                        <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                        Featured
+                      </span>
+                    )}
+                    {project.status && (
+                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-mono bg-amber-500/10 text-amber-300 border border-amber-400/20">
+                        <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                        {project.status}
+                      </span>
+                    )}
                   </div>
                 )}
-                <div className={isFeatured ? 'mb-2' : 'mb-2'}>
+                <div className="mb-2">
                   <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-white/5 text-indigo-300 border border-white/10">
                     {project.category}
                   </span>
@@ -61,21 +71,37 @@ export default function ProjectsSection() {
                   )}
                 </div>
 
-                <div className="mt-3.5 pt-3 border-t border-white/10 flex items-center gap-2.5">
+                <div className="mt-3.5 pt-3 border-t border-white/10 flex flex-wrap items-center gap-x-2.5 gap-y-2">
                   {project.liveDemo ? (
                     <a href={project.liveDemo} target="_blank" rel="noreferrer"
                        className="inline-flex items-center gap-1 text-sm text-white font-medium hover:text-cyan-300 transition-colors">
                       <ExternalLink className="w-3.5 h-3.5" /> Demo
                     </a>
                   ) : (
-                    <span className="inline-flex items-center gap-1 text-sm text-slate-500">
-                      <ExternalLink className="w-3.5 h-3.5" /> Demo
+                    <span className="inline-flex items-center gap-1 text-sm text-slate-500" title="No live demo has been deployed for this project">
+                      <ExternalLink className="w-3.5 h-3.5" /> No live demo
                     </span>
                   )}
-                  <a href={project.github} target="_blank" rel="noreferrer"
-                     className="inline-flex items-center gap-1 text-sm text-white font-medium hover:text-cyan-300 transition-colors">
-                    <GithubIcon className="w-3.5 h-3.5" /> Code
-                  </a>
+                  {project.github ? (
+                    <a href={project.github} target="_blank" rel="noreferrer"
+                       className="inline-flex items-center gap-1 text-sm text-white font-medium hover:text-cyan-300 transition-colors">
+                      <GithubIcon className="w-3.5 h-3.5" /> Code
+                    </a>
+                  ) : (
+                    <span className="inline-flex items-center gap-1 text-sm text-slate-500" title={project.githubUnavailable || 'No public source repository'}>
+                      <GithubIcon className="w-3.5 h-3.5" /> Source unavailable
+                    </span>
+                  )}
+                  {project.id === 'hackmind-ai' && (
+                    <button
+                      type="button"
+                      onClick={() => setModalOpen(true)}
+                      className="ml-auto inline-flex items-center gap-1 text-sm font-medium text-cyan-400 hover:text-cyan-300 transition-colors"
+                    >
+                      Agent workflow
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </button>
+                  )}
                 </div>
               </div>
             );

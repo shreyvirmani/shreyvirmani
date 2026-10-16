@@ -2,7 +2,7 @@ export const portfolioData = {
   personal: {
     name: "Shrey Virmani",
     title: "AI/ML Engineer | AI Applications Developer",
-    tagline: "Building production AI/ML systems, NLP pipelines, and practical AI applications.",
+    tagline: "Building AI/ML systems, NLP pipelines, and practical AI applications.",
     positioning: "AI/ML Engineer focused on machine learning, NLP, and practical AI applications, with additional experience in Generative AI, RAG, and multi-agent systems.",
     bio: "I am an AI/ML engineer with hands-on experience building machine learning systems, NLP pipelines, and practical AI applications. My work spans the complete AI/ML lifecycle — data processing, feature engineering, model training, NLP, retrieval systems, and deploying AI/ML-powered products. I also have experience with Generative AI, RAG pipelines, LLM integration, prompt engineering, multi-agent workflows, backend API development, and full-stack deployment.",
     location: "New Delhi, India",
@@ -28,16 +28,17 @@ export const portfolioData = {
       subtitle: "Security Scanning & AI/ML-Based Risk Scoring",
       flagship: true,
       category: "AI/ML Systems",
+      status: "In development",
       github: "https://github.com/shreyvirmani/Tracera",
       tech: ["Python", "scikit-learn", "FastAPI", "Next.js", "PostgreSQL"],
       summary: "Scans websites for security misconfigurations including insecure cookies, missing security headers, and HTTP/TLS issues, then produces severity-based risk scores and remediation reports.",
-      description: `Tracera combines a deterministic scanning engine with 16 rule-based checks and a 17-feature AI/ML pipeline to detect security misconfigurations. An experimental Isolation Forest anomaly detector was prototyped but has not been evaluated on labeled real-world data. The FastAPI backend integrates with a Next.js frontend for scan history and reporting workflows. No deployed demo is available.`,
+      description: `Tracera combines a deterministic scanning engine with 15 registered rule-based checks and a 17-feature ML schema (MLFeaturesV1) used for model training to detect security misconfigurations. An experimental Isolation Forest anomaly detector was prototyped on synthetic data but has not been evaluated on labeled real-world data. The FastAPI backend integrates with a Next.js frontend for scan history and reporting workflows. No deployed demo is available; the source code is public.`,
       highlights: [
-        "16 rule-based security checks covering cookies, headers, HTTP/TLS configurations.",
-        "17-feature AI/ML pipeline with scikit-learn for severity-based risk scoring.",
-        "Experimental Isolation Forest anomaly detector (not evaluated on labeled real-world data).",
+        "15 deterministic rule-based security checks covering headers, cookies, configuration disclosure, CORS, and performance.",
+        "17-feature ML schema with scikit-learn training (logistic regression, random forest, XGBoost) alongside a rule-based scoring baseline.",
+        "Experimental Isolation Forest anomaly detector (synthetic-data experiment; not evaluated on labeled real-world data).",
         "FastAPI backend with Next.js frontend, scan history, and remediation reporting.",
-        "No live demo deployed."
+        "In development — no live demo deployed; source code public."
       ]
     },
     {
@@ -67,18 +68,18 @@ export const portfolioData = {
       category: "Agentic AI",
       liveDemo: "https://hackmind-ai-copilot.vercel.app/",
       github: "https://github.com/shreyvirmani/HackMind-AI",
-      tech: ["Google Gemini", "LLM Integration", "LangGraph", "Agent Orchestration", "FastAPI", "WebSockets", "Next.js", "TypeScript", "Supabase/PostgreSQL", "Python", "Razorpay", "Vercel", "Railway"],
-      summary: "A full-stack Multi-Agent Generative AI platform for hackathon ideation, research, evaluation, prompt engineering, and project development — orchestrating 6 specialized AI agents that take a raw problem statement from first idea to investor-ready pitch.",
-      description: `HackMind AI Copilot is an agentic AI product/workflow platform built as a full-stack SaaS. It orchestrates six specialized AI agents (Idea Generation, Planner, Research, Judge, Pitch, and LLM Prompt Generation) through a sequential, context-aware workflow powered by Google Gemini and LangGraph concepts. The platform also ships an integrated conversational AI chatbot that lets users interact with their evolving project and receive contextual assistance throughout the entire development lifecycle. Production features include Next.js/TypeScript on Vercel, FastAPI on Railway, Supabase PostgreSQL, real-time workflow updates over WebSockets, automated PDF/PPT generation, and Razorpay-based SaaS monetization.`,
+      tech: ["Google Gemini", "LLM Integration", "Agent Orchestration", "FastAPI", "WebSockets", "Next.js", "TypeScript", "Supabase/PostgreSQL", "Python", "Razorpay", "Vercel", "Railway"],
+      summary: "A full-stack Multi-Agent Generative AI platform for hackathon ideation, research, evaluation, prompt engineering, and project development — orchestrating 6 specialized AI agents that take a raw problem statement from first idea to a structured project pitch.",
+      description: `HackMind AI Copilot is an agentic AI product/workflow platform built as a full-stack SaaS. It orchestrates six specialized AI agents (Idea Generation, Planner, Research, Judge, Pitch, and LLM Prompt Generation) through a sequential, context-aware workflow powered by Google Gemini with a LangGraph-inspired orchestration pattern. The platform also ships an integrated conversational AI chatbot that lets users interact with their evolving project and receive contextual assistance throughout the entire development lifecycle. Features include Next.js/TypeScript on Vercel, a FastAPI backend, Supabase PostgreSQL, real-time workflow updates over WebSockets, automated PDF/PPT generation, and Razorpay-based payment integration.`,
       highlights: [
         "6-Agent Sequential Workflow: Idea Generation → Planner → Research → Judge → Pitch → LLM Prompt Generation.",
-        "Multi-Agent AI architecture with Gemini/LLM integration and LangGraph-style orchestration.",
+        "Multi-Agent AI architecture with Gemini/LLM integration and LangGraph-inspired orchestration pattern.",
         "Agentic, context-aware AI workflows that carry project context across every stage.",
         "Idea generation from problem statements, domains, and requirements; research & competitive analysis.",
         "AI-based project judging with weakness detection, scoring, and actionable improvements.",
         "Automated pitch generation and optimized task-specific LLM prompts for implementation.",
         "HackMind AI Copilot: integrated conversational AI chatbot for contextual project assistance.",
-        "PDF/PPT generation, real-time WebSocket workflow updates, and Razorpay SaaS monetization."
+        "PDF/PPT generation, real-time WebSocket workflow updates, and Razorpay payment integration."
       ],
       agents: [
         {
@@ -136,7 +137,7 @@ export const portfolioData = {
       github: "https://github.com/shreyvirmani/PDF-QA-RAG",
       tech: ["Python", "LangChain", "FAISS", "Hugging Face Embeddings", "Google Gemini API", "Streamlit"],
       summary: "End-to-end Retrieval-Augmented Generation application enabling natural language interrogation of PDF documents with grounded source citations.",
-      description: `Constructed a comprehensive RAG pipeline encompassing document parsing, recursive text chunking, dense vector embeddings via Hugging Face, high-speed similarity search in FAISS, and context-injected prompt synthesis with Google Gemini for zero-hallucination document intelligence.`,
+      description: `Constructed a RAG pipeline encompassing document parsing, recursive text chunking, dense vector embeddings via Hugging Face, similarity search in FAISS, and context-injected prompt synthesis with Google Gemini, with retrieved source passages displayed alongside answers so responses stay grounded in the source document.`,
       highlights: [
         "Ingests and parses complex PDF documents with recursive character text chunking.",
         "Dense vector representations generated with Hugging Face Embeddings and indexed in FAISS.",
@@ -151,7 +152,7 @@ export const portfolioData = {
       flagship: false,
       category: "Generative AI",
       liveDemo: "https://artificial-intelligence-resume-analyzer.streamlit.app/",
-      github: "https://github.com/shreyvirmani",
+      github: "https://github.com/shreyvirmani/AI-Resume-Analyzer",
       tech: ["Python", "Google Gemini", "NLP", "Prompt Engineering", "Streamlit", "ReportLab"],
       summary: "AI system designed to extract unstructured resume information, evaluate ATS compatibility, generate targeted interview questions, and provide career-oriented improvement feedback.",
       description: `Built an intelligent career copilot that parses resumes, identifies skill gaps, computes ATS compatibility scores, generates tailored technical interview questions based on candidate profile, and exports downloadable PDF diagnostic reports.`,
@@ -169,7 +170,7 @@ export const portfolioData = {
       flagship: false,
       category: "Full-Stack AI",
       liveDemo: "https://sih-team-matcher.vercel.app/",
-      github: "https://github.com/shreyvirmani",
+      githubUnavailable: "No public repository — source is private.",
       tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL", "RLS"],
       summary: "Smart India Hackathon intelligent team-building platform that matches students based on complementary skill matrices and problem statements.",
       description: `Designed and architected a full-stack platform to solve student team formation challenges for Smart India Hackathon. Uses skill-based matching logic, compatibility scoring, and identification of missing technical roles. Connected to real-world outreach as Vice President of ISTE at MSIT.`,
@@ -187,14 +188,14 @@ export const portfolioData = {
       flagship: false,
       category: "AI/ML Systems",
       liveDemo: "https://spam-detection-appp.streamlit.app/",
-      github: "https://github.com/shreyvirmani",
-      tech: ["Python", "scikit-learn", "NLP", "Text Preprocessing", "Supervised Learning"],
-      summary: "Traditional NLP and machine learning pipeline for high-precision text classification and spam filtration.",
-      description: `Demonstrates foundational AI/ML and NLP expertise including text normalization, tokenization, TF-IDF vectorization, feature engineering, classification model training with scikit-learn, and rigorous evaluation using confusion matrices, precision, recall, and ROC-AUC.`,
+      github: "https://github.com/shreyvirmani/Spam-Detection",
+      tech: ["Python", "scikit-learn", "NLTK", "Naive Bayes", "Streamlit"],
+      summary: "NLP and machine learning pipeline for text classification and spam filtering using TF-IDF vectorization and a Naive Bayes classifier.",
+      description: `Demonstrates foundational AI/ML and NLP workflow including text normalization, tokenization, TF-IDF vectorization, and a Naive Bayes classifier trained with scikit-learn. The project notebook reports about 99.69% test accuracy, and the trained model and vectorizer are serialized for reuse by the Streamlit demo app.`,
       highlights: [
         "End-to-end data preprocessing, tokenization, and TF-IDF feature extraction.",
-        "Trained and benchmarked supervised classifiers using scikit-learn.",
-        "Comprehensive model evaluation with cross-validation, precision/recall, and F1 scoring."
+        "Naive Bayes classifier trained with scikit-learn; notebook reports about 99.69% test accuracy.",
+        "Serialized model assets (spam_model.pkl, tfidf_vectorizer.pkl) with a deployed Streamlit demo."
       ]
     }
   ],

@@ -44,7 +44,7 @@ export default function Navbar({ theme = 'dark', onToggleTheme }) {
             <a
               key={link.name}
               href={link.href}
-              className="relative px-3 py-1.5 text-sm text-slate-300 hover:text-white rounded-full transition-colors duration-300 hover:bg-white/5"
+              className="relative px-3 py-1.5 text-sm text-slate-300 hover:text-white rounded-full transition-colors duration-300 hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
             >
               {link.name}
             </a>
@@ -55,20 +55,22 @@ export default function Navbar({ theme = 'dark', onToggleTheme }) {
           <button
             onClick={onToggleTheme}
             aria-label="Toggle theme"
-            className="p-2 rounded-full text-slate-300 hover:text-white hover:bg-white/5 transition-colors"
+            className="p-2 rounded-full text-slate-300 hover:text-white hover:bg-white/5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
           >
             {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
           </button>
           <a
             href="#contact"
-            className="hidden sm:inline-flex items-center px-4 py-2 rounded-full text-sm font-medium text-white bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 shadow-lg shadow-indigo-500/25 transition-all hover:shadow-indigo-400/40"
+            className="hidden sm:inline-flex items-center px-4 py-2 rounded-full text-sm font-medium text-white bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 shadow-lg shadow-indigo-500/25 transition-all hover:shadow-indigo-400/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
           >
             Hire Me
           </a>
           <button
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
-            className="md:hidden p-2 rounded-full text-slate-300 hover:text-white hover:bg-white/5"
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            className="md:hidden p-2 rounded-full text-slate-300 hover:text-white hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
           >
             {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -76,7 +78,7 @@ export default function Navbar({ theme = 'dark', onToggleTheme }) {
       </nav>
 
       {open && (
-        <div className="md:hidden mt-3 glass-strong rounded-2xl p-3 space-y-1 shadow-2xl">
+        <div id="mobile-menu" className="md:hidden mt-3 glass-strong rounded-2xl p-3 space-y-1 shadow-2xl">
           {LINKS.map((link) => (
             <a
               key={link.name}

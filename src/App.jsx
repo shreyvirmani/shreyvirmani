@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import ThreeScene from './components/ThreeScene';
+import React, { lazy, Suspense, useEffect, useState } from 'react';
 import ScrollEffects from './components/ScrollEffects';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -10,6 +9,10 @@ import ExperienceSection from './components/ExperienceSection';
 import EducationSection from './components/EducationSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
+
+// The WebGL particle background pulls in three.js (~500 kB). Load it lazily so
+// it never blocks the first paint — the page is fully usable without it.
+const ThreeScene = lazy(() => import('./components/ThreeScene'));
 
 const THEME_KEY = 'sv-portfolio-theme';
 
@@ -55,7 +58,9 @@ export default function App() {
     <div className="relative min-h-screen text-slate-100 selection:bg-cyan-500/30 selection:text-white antialiased">
       {/* Background layers */}
       <div className="fixed inset-0 -z-20 grid-bg pointer-events-none" />
-      <ThreeScene />
+      <Suspense fallback={null}>
+        <ThreeScene />
+      </Suspense>
 
       {/* Interactive overlays */}
       <ScrollEffects />

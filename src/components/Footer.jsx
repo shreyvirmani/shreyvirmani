@@ -15,6 +15,10 @@ export default function Footer() {
               <img
                 src="/profile.jpg"
                 alt={personal.name}
+                width="32"
+                height="32"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover"
               />
             </span>

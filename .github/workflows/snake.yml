@@ -22,7 +22,7 @@ jobs:
       - name: Generate Snake Animation (Neon Cyan Theme)
         uses: Platane/snk@v3
         with:
-          github_user_name: Sahilbhatane
+          github_user_name: shreyvirmani
           outputs: |
             dist/github-contribution-grid-snake.svg?palette=github-dark&color_snake=00F0FF
             dist/github-contribution-grid-snake.gif?palette=github-dark&color_snake=00F0FF

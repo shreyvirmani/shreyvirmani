@@ -4,8 +4,8 @@
   "description": "AI & Machine Learning Engineer building with LLMs, RAG, and Multi-Agent AI systems.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#ffffff",
+  "background_color": "#07080d",
+  "theme_color": "#07080d",
   "icons": [
     {
       "src": "/icon-192.png",

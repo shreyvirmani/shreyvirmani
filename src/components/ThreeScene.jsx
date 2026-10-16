@@ -17,6 +17,10 @@ export default function ThreeScene() {
     const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 300);
     camera.position.set(0, 0, 26);
 
+    const reduceMotion =
+      typeof window.matchMedia === 'function' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: 'high-performance' });
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -83,8 +87,7 @@ export default function ThreeScene() {
     const clock = new THREE.Clock();
     let raf;
 
-    const animate = () => {
-      raf = requestAnimationFrame(animate);
+    const render = () => {
       const t = clock.getElapsedTime();
 
       // Smooth mouse easing
@@ -103,10 +106,42 @@ export default function ThreeScene() {
       camera.lookAt(scene.position);
       renderer.render(scene, camera);
     };
-    animate();
+
+    const animate = () => {
+      raf = requestAnimationFrame(animate);
+      render();
+    };
+
+    const startLoop = () => {
+      if (reduceMotion || raf !== undefined) return;
+      raf = requestAnimationFrame(animate);
+    };
+    const stopLoop = () => {
+      if (raf === undefined) return;
+      cancelAnimationFrame(raf);
+      raf = undefined;
+    };
+
+    const onVisibilityChange = () => {
+      if (document.hidden) {
+        stopLoop();
+      } else if (!reduceMotion) {
+        startLoop();
+      }
+    };
+
+    if (reduceMotion) {
+      // Respect reduced-motion: draw a single static frame, no continuous loop
+      render();
+    } else {
+      animate();
+    }
+
+    document.addEventListener('visibilitychange', onVisibilityChange);
 
     return () => {
-      cancelAnimationFrame(raf);
+      stopLoop();
+      document.removeEventListener('visibilitychange', onVisibilityChange);
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('resize', onResize);
       renderer.dispose();

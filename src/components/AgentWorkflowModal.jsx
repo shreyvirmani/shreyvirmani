@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import {
   X, CheckCircle2, ArrowRight, Lightbulb, Brain, Search, Scale,
   Presentation, Terminal, Bot, Layers,
@@ -6,6 +6,59 @@ import {
 
 export default function AgentWorkflowModal({ isOpen, onClose }) {
   const [activeTab, setActiveTab] = useState('idea');
+  const dialogRef = useRef(null);
+  const closeBtnRef = useRef(null);
+  const previouslyFocused = useRef(null);
+  const onCloseRef = useRef(onClose);
+
+  // Keep the latest onClose without re-running the open/close effect (which
+  // manages focus and body scroll) on every parent re-render.
+  useEffect(() => {
+    onCloseRef.current = onClose;
+  }, [onClose]);
+
+  useEffect(() => {
+    if (!isOpen) return undefined;
+
+    previouslyFocused.current = document.activeElement;
+    closeBtnRef.current?.focus();
+
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        onCloseRef.current();
+        return;
+      }
+      if (e.key !== 'Tab') return;
+
+      // Simple focus trap: keep Tab focus inside the dialog
+      const dialog = dialogRef.current;
+      if (!dialog) return;
+      const focusables = dialog.querySelectorAll(
+        'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])',
+      );
+      if (focusables.length === 0) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
+
+    document.addEventListener('keydown', onKeyDown);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.removeEventListener('keydown', onKeyDown);
+      document.body.style.overflow = prevOverflow;
+      previouslyFocused.current?.focus?.();
+    };
+  }, [isOpen]);
 
   if (!isOpen) return null;
 
@@ -105,12 +158,24 @@ export default function AgentWorkflowModal({ isOpen, onClose }) {
   const currentAgent = agents.find((a) => a.id === activeTab) || agents[0];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md overflow-y-auto">
-      <div className="relative w-full max-w-4xl glass-strong border border-white/10 rounded-3xl p-6 sm:p-8 shadow-2xl my-4">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md overflow-y-auto"
+      onMouseDown={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
+    >
+      <div
+        ref={dialogRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="agent-workflow-title"
+        className="relative w-full max-w-4xl glass-strong border border-white/10 rounded-3xl p-6 sm:p-8 shadow-2xl my-4"
+      >
         {/* Close Button */}
         <button
+          ref={closeBtnRef}
           onClick={onClose}
-          aria-label="Close"
+          aria-label="Close agent workflow dialog"
           className="absolute top-5 right-5 p-2 rounded-full bg-white/5 text-slate-300 hover:text-white hover:bg-white/10 transition-colors"
         >
           <X className="w-5 h-5" />
@@ -122,9 +187,9 @@ export default function AgentWorkflowModal({ isOpen, onClose }) {
             <Layers className="w-6 h-6" />
           </div>
           <div>
-            <h3 className="text-xl sm:text-2xl font-bold text-white">HACKMIND AI</h3>
+            <h3 id="agent-workflow-title" className="text-xl sm:text-2xl font-bold text-white">HACKMIND AI</h3>
             <p className="text-xs sm:text-sm text-slate-400">
-              Multi-Agent Generative AI platform orchestrated with Google Gemini &amp; LangGraph
+              Multi-Agent Generative AI platform using Google Gemini with LangGraph-inspired orchestration
             </p>
           </div>
         </div>
@@ -142,6 +207,8 @@ export default function AgentWorkflowModal({ isOpen, onClose }) {
                 <button
                   key={agent.id}
                   onClick={() => setActiveTab(agent.id)}
+                  aria-pressed={isSelected}
+                  aria-label={`Show ${agent.name} details`}
                   className={`flex flex-col items-center text-center p-3 rounded-xl border transition-all ${
                     isSelected
                       ? 'bg-white/10 border-cyan-400/80 shadow-lg shadow-cyan-500/10 scale-105'
@@ -217,7 +284,7 @@ export default function AgentWorkflowModal({ isOpen, onClose }) {
         {/* Modal Footer */}
         <div className="mt-6 flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-white/10">
           <div className="text-xs text-slate-400">
-            Deployed on: <strong className="text-slate-200">Vercel</strong> (Next.js) + <strong className="text-slate-200">Railway</strong> (FastAPI) + <strong className="text-slate-200">Supabase</strong> (PostgreSQL) · Razorpay SaaS
+            Live frontend on <strong className="text-slate-200">Vercel</strong> (Next.js) · Backend <strong className="text-slate-200">FastAPI</strong> · Database <strong className="text-slate-200">Supabase</strong> (PostgreSQL) · Razorpay
           </div>
           <a
             href="https://hackmind-ai-copilot.vercel.app/"

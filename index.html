@@ -1,10 +1,16 @@
 <!doctype html>
-<html lang="en" class="dark scroll-smooth">
+<html lang="en" class="dark" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shrey Virmani | AI/ML Engineer & Product Builder</title>
     <meta name="description" content="AI & Machine Learning Engineer passionate about building intelligent applications using LLMs, RAG, and Multi-Agent AI systems." />
+    <script>
+      // Apply the saved theme before first paint to avoid a dark flash
+      try {
+        document.documentElement.setAttribute('data-theme', localStorage.getItem('sv-portfolio-theme') || 'dark');
+      } catch (e) { /* ignore */ }
+    </script>
 
     <!-- Icons & favicons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -21,17 +27,21 @@
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://shreyvirmani.vercel.app/" />
+    <meta property="og:site_name" content="Shrey Virmani" />
     <meta property="og:title" content="Shrey Virmani | AI/ML Engineer & Product Builder" />
     <meta property="og:description" content="AI & Machine Learning Engineer building intelligent applications with LLMs, RAG, and Multi-Agent AI systems." />
-    <meta property="og:image" content="/opengraph-image.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <meta property="og:image" content="https://shreyvirmani.vercel.app/opengraph-image.png" />
+    <meta property="og:image:alt" content="Shrey Virmani — AI/ML Engineer portfolio preview" />
+    <meta property="og:image:width" content="1918" />
+    <meta property="og:image:height" content="829" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Shrey Virmani | AI/ML Engineer & Product Builder" />
     <meta name="twitter:description" content="AI & Machine Learning Engineer building intelligent applications with LLMs, RAG, and Multi-Agent AI systems." />
-    <meta name="twitter:image" content="/banner.png" />
+    <meta name="twitter:image" content="https://shreyvirmani.vercel.app/opengraph-image.png" />
+    <meta name="twitter:image:alt" content="Shrey Virmani — AI/ML Engineer portfolio preview" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

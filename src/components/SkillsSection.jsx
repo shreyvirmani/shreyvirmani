@@ -4,9 +4,8 @@ import {
   SiFastapi, SiNextdotjs, SiReact, SiTypescript, SiTailwindcss,
   SiPostgresql, SiSupabase, SiMongodb, SiMysql, SiDocker,
   SiGit, SiGithub, SiVercel, SiStreamlit, SiHuggingface,
-  SiGooglecolab, SiGoogle, SiNumpy, SiPandas, SiKeras,
+  SiGooglecolab, SiGoogle, SiNumpy, SiPandas,
 } from 'react-icons/si';
-import { Database } from 'lucide-react';
 import SectionHeading from './SectionHeading';
 
 const SKILLS = [
@@ -43,7 +42,7 @@ export default function SkillsSection() {
         <SectionHeading
           eyebrow="Skills & Tools"
           title="A full-stack AI toolkit"
-          description="The languages, frameworks, and platforms I use to ship production AI products."
+          description="The languages, frameworks, and platforms I use to build and deploy AI applications."
         />
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5">

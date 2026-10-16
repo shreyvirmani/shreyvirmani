@@ -10,12 +10,18 @@ const ROLES = [
   'Full-Stack AI Applications Builder',
 ];
 
+const prefersReducedMotion = () =>
+  typeof window !== 'undefined' &&
+  typeof window.matchMedia === 'function' &&
+  window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 function useTypewriter(words) {
-  const [text, setText] = useState('');
+  const [text, setText] = useState(() => (prefersReducedMotion() ? words[0] : ''));
   const [wordIndex, setWordIndex] = useState(0);
   const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {
+    if (prefersReducedMotion()) return undefined;
     const current = words[wordIndex % words.length];
     let timeout;
 
@@ -69,7 +75,7 @@ export default function Hero() {
           </p>
 
           <p className="reveal mt-6 text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl">
-            I build production AI/ML systems and AI applications — from{' '}
+            I build AI/ML systems and AI applications — from{' '}
             <span className="text-white">AI/ML pipelines and NLP systems</span> to{' '}
             <span className="text-white">RAG, multi-agent workflows, and full-stack deployment</span>.
           </p>
@@ -150,6 +156,8 @@ export default function Hero() {
               <img
                 src="https://ghchart.rshah.org/38bdf8/shreyvirmani"
                 alt="Shrey Virmani's GitHub contribution chart"
+                loading="lazy"
+                decoding="async"
                 className="w-full min-w-0 sm:min-w-[560px] opacity-80 hover:opacity-100 transition-opacity"
               />
             </div>

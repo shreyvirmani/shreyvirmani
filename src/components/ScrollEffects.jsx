@@ -36,7 +36,15 @@ export default function ScrollEffects() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const toTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  const toTop = () =>
+    window.scrollTo({
+      top: 0,
+      behavior:
+        typeof window.matchMedia === 'function' &&
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches
+          ? 'auto'
+          : 'smooth',
+    });
 
   return (
     <>
