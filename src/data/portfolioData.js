@@ -1,10 +1,10 @@
 export const portfolioData = {
   personal: {
     name: "Shrey Virmani",
-    title: "AI & Machine Learning Engineer | Product Builder",
-    tagline: "Building intelligent systems from neural pipelines to production-grade products.",
-    positioning: "AI/ML Engineer focused on Generative AI, NLP, RAG, LLM applications, and multi-agent systems, with experience turning AI prototypes into full-stack, deployable products.",
-    bio: "I am an AI/ML-focused engineer and product builder with hands-on experience building Generative AI, NLP, RAG, and full-stack AI applications. My work spans the complete AI application lifecycle, including data processing, NLP, embeddings, retrieval systems, LLM integration, prompt engineering, multi-agent workflows, backend API development, database integration, deployment, and productization.",
+    title: "AI/ML Engineer | AI Applications Developer",
+    tagline: "Building production AI/ML systems, NLP pipelines, and practical AI applications.",
+    positioning: "AI/ML Engineer focused on machine learning, NLP, and practical AI applications, with additional experience in Generative AI, RAG, and multi-agent systems.",
+    bio: "I am an AI/ML engineer with hands-on experience building machine learning systems, NLP pipelines, and practical AI applications. My work spans the complete AI/ML lifecycle — data processing, feature engineering, model training, NLP, retrieval systems, and deploying AI/ML-powered products. I also have experience with Generative AI, RAG pipelines, LLM integration, prompt engineering, multi-agent workflows, backend API development, and full-stack deployment.",
     location: "New Delhi, India",
     phone: "+91 9625465588",
     email: "shreyvirmani1905@gmail.com",
@@ -15,26 +15,63 @@ export const portfolioData = {
   },
   
   stats: [
-    { label: "Core AI Focus", value: "GenAI, RAG & Agents" },
-    { label: "Production Platforms", value: "Full-Stack AI" },
-    { label: "Current B.Tech CGPA", value: "8.197" },
+    { label: "Core Focus", value: "AI/ML, NLP & AI Systems" },
+    { label: "Additional Strength", value: "GenAI, RAG & Agents" },
+    { label: "Current B.Tech CGPA", value: "8.2/10" },
     { label: "Leadership Role", value: "VP @ ISTE MSIT" },
   ],
 
   projects: [
     {
+      id: "tracera",
+      title: "Tracera — Website Risk Assessment",
+      subtitle: "Security Scanning & AI/ML-Based Risk Scoring",
+      flagship: true,
+      category: "AI/ML Systems",
+      github: "https://github.com/shreyvirmani/Tracera",
+      tech: ["Python", "scikit-learn", "FastAPI", "Next.js", "PostgreSQL"],
+      summary: "Scans websites for security misconfigurations including insecure cookies, missing security headers, and HTTP/TLS issues, then produces severity-based risk scores and remediation reports.",
+      description: `Tracera combines a deterministic scanning engine with 16 rule-based checks and a 17-feature AI/ML pipeline to detect security misconfigurations. An experimental Isolation Forest anomaly detector was prototyped but has not been evaluated on labeled real-world data. The FastAPI backend integrates with a Next.js frontend for scan history and reporting workflows. No deployed demo is available.`,
+      highlights: [
+        "16 rule-based security checks covering cookies, headers, HTTP/TLS configurations.",
+        "17-feature AI/ML pipeline with scikit-learn for severity-based risk scoring.",
+        "Experimental Isolation Forest anomaly detector (not evaluated on labeled real-world data).",
+        "FastAPI backend with Next.js frontend, scan history, and remediation reporting.",
+        "No live demo deployed."
+      ]
+    },
+    {
+      id: "pdf2ml-dataprep",
+      title: "PDF2ML DataPrep — PDF-to-AI/ML Converter",
+      subtitle: "PDF Table Extraction to AI/ML-Ready Datasets",
+      flagship: true,
+      category: "Data Engineering",
+      liveDemo: "https://pdf2ml.streamlit.app/",
+      github: "https://github.com/shreyvirmani/PDF2ML",
+      tech: ["Python", "FastAPI", "Streamlit", "Camelot", "pandas", "Celery"],
+      summary: "Extracts tables and text from PDFs using Camelot, Tabula, and pdfminer and converts them into cleaned, AI/ML-ready CSV/XLSX datasets.",
+      description: `PDF2ML DataPrep extracts structured data from PDFs using Camelot, Tabula, and pdfminer, then applies configurable cleaning and schema inference with pandas to produce AI/ML-ready datasets. Built with a FastAPI backend, Celery/Redis background jobs, S3-compatible storage, a Streamlit interface, Docker, and pytest.`,
+      highlights: [
+        "Multi-engine PDF extraction: Camelot, Tabula, and pdfminer for tables and text.",
+        "Configurable data cleaning and schema inference with pandas.",
+        "FastAPI backend with Celery/Redis async job processing.",
+        "S3-compatible storage, Docker containerization, and pytest test suite.",
+        "Streamlit interface for interactive conversion workflows."
+      ]
+    },
+    {
       id: "hackmind-ai",
-      title: "HACKMIND AI",
+      title: "HackMind AI Copilot",
       subtitle: "Full-Stack Multi-Agent Generative AI Platform",
       flagship: true,
       category: "Agentic AI",
       liveDemo: "https://hackmind-ai-copilot.vercel.app/",
-      github: "https://github.com/shreyvirmani",
+      github: "https://github.com/shreyvirmani/HackMind-AI",
       tech: ["Google Gemini", "LLM Integration", "LangGraph", "Agent Orchestration", "FastAPI", "WebSockets", "Next.js", "TypeScript", "Supabase/PostgreSQL", "Python", "Razorpay", "Vercel", "Railway"],
       summary: "A full-stack Multi-Agent Generative AI platform for hackathon ideation, research, evaluation, prompt engineering, and project development — orchestrating 6 specialized AI agents that take a raw problem statement from first idea to investor-ready pitch.",
-      description: `HACKMIND AI is an agentic AI product/workflow platform built as a full-stack SaaS. It orchestrates six specialized AI agents (Idea Generator, Planner, Research, Judge, Pitch, and LLM Prompt Generation) through a sequential, context-aware workflow powered by Google Gemini and LangGraph concepts. The platform also ships HackMind AI Copilot, an integrated conversational AI chatbot that lets users interact with their evolving project and receive contextual assistance throughout the entire development lifecycle. Production features include Next.js/TypeScript on Vercel, FastAPI on Railway, Supabase PostgreSQL, real-time workflow updates over WebSockets, automated PDF/PPT generation, and Razorpay-based SaaS monetization.`,
+      description: `HackMind AI Copilot is an agentic AI product/workflow platform built as a full-stack SaaS. It orchestrates six specialized AI agents (Idea Generation, Planner, Research, Judge, Pitch, and LLM Prompt Generation) through a sequential, context-aware workflow powered by Google Gemini and LangGraph concepts. The platform also ships an integrated conversational AI chatbot that lets users interact with their evolving project and receive contextual assistance throughout the entire development lifecycle. Production features include Next.js/TypeScript on Vercel, FastAPI on Railway, Supabase PostgreSQL, real-time workflow updates over WebSockets, automated PDF/PPT generation, and Razorpay-based SaaS monetization.`,
       highlights: [
-        "6-Agent Sequential Workflow: Idea Generator -> Planner -> Research -> Judge -> Pitch -> LLM Prompt Generation.",
+        "6-Agent Sequential Workflow: Idea Generation → Planner → Research → Judge → Pitch → LLM Prompt Generation.",
         "Multi-Agent AI architecture with Gemini/LLM integration and LangGraph-style orchestration.",
         "Agentic, context-aware AI workflows that carry project context across every stage.",
         "Idea generation from problem statements, domains, and requirements; research & competitive analysis.",
@@ -45,7 +82,7 @@ export const portfolioData = {
       ],
       agents: [
         {
-          name: "Idea Generator Agent",
+          name: "Idea Generation Agent",
           role: "Generates and refines hackathon ideas based on problem statements, domains, and requirements."
         },
         {
@@ -71,13 +108,32 @@ export const portfolioData = {
       ]
     },
     {
+      id: "clinguard-ai",
+      title: "ClinGuard AI — Healthcare AI Safety Evaluation Prototype",
+      subtitle: "Deterministic Safety Benchmark & Rule-Based Safeguards",
+      flagship: true,
+      category: "AI Safety",
+      liveDemo: "https://clinguard-ai.streamlit.app/",
+      github: "https://github.com/shreyvirmani/clinguard-ai",
+      tech: ["Python", "Streamlit", "Plotly", "pytest"],
+      summary: "Deterministic, fixture-based educational prototype using a 29-case fictional benchmark, a rule-based evaluator, and a five-safeguard regex safety layer whose output is re-evaluated.",
+      description: `ClinGuard AI is an educational prototype for healthcare AI safety evaluation. It uses a 29-case fictional benchmark with a rule-based evaluator and a five-safeguard regex safety layer. Does not call or evaluate a live model and is not clinically validated. On demo fixtures, passing cases increased from 10/29 to 21/29 with one benign-case regression. Includes a Streamlit dashboard, audit exports, and a 109-test pytest suite.`,
+      highlights: [
+        "29-case fictional benchmark with deterministic rule-based evaluation.",
+        "Five-safeguard regex safety layer with re-evaluation of outputs.",
+        "Passing cases improved from 10/29 to 21/29 on fixtures (one benign-case regression).",
+        "No live model calls; not clinically validated — educational prototype only.",
+        "Streamlit dashboard, audit exports, and 109-test pytest suite."
+      ]
+    },
+    {
       id: "rag-pdf-assistant",
       title: "RAG PDF Assistant",
       subtitle: "Document Intelligence & Semantic Q&A System",
-      flagship: false,
+      flagship: true,
       category: "RAG & NLP",
       liveDemo: "https://pdf-app-rag.streamlit.app/",
-      github: "https://github.com/shreyvirmani",
+      github: "https://github.com/shreyvirmani/PDF-QA-RAG",
       tech: ["Python", "LangChain", "FAISS", "Hugging Face Embeddings", "Google Gemini API", "Streamlit"],
       summary: "End-to-end Retrieval-Augmented Generation application enabling natural language interrogation of PDF documents with grounded source citations.",
       description: `Constructed a comprehensive RAG pipeline encompassing document parsing, recursive text chunking, dense vector embeddings via Hugging Face, high-speed similarity search in FAISS, and context-injected prompt synthesis with Google Gemini for zero-hallucination document intelligence.`,
@@ -129,12 +185,12 @@ export const portfolioData = {
       title: "Spam Detection & Classification",
       subtitle: "Supervised Machine Learning & NLP Pipeline",
       flagship: false,
-      category: "ML Systems",
+      category: "AI/ML Systems",
       liveDemo: "https://spam-detection-appp.streamlit.app/",
       github: "https://github.com/shreyvirmani",
       tech: ["Python", "scikit-learn", "NLP", "Text Preprocessing", "Supervised Learning"],
       summary: "Traditional NLP and machine learning pipeline for high-precision text classification and spam filtration.",
-      description: `Demonstrates foundational ML and NLP expertise including text normalization, tokenization, TF-IDF vectorization, feature engineering, classification model training with scikit-learn, and rigorous evaluation using confusion matrices, precision, recall, and ROC-AUC.`,
+      description: `Demonstrates foundational AI/ML and NLP expertise including text normalization, tokenization, TF-IDF vectorization, feature engineering, classification model training with scikit-learn, and rigorous evaluation using confusion matrices, precision, recall, and ROC-AUC.`,
       highlights: [
         "End-to-end data preprocessing, tokenization, and TF-IDF feature extraction.",
         "Trained and benchmarked supervised classifiers using scikit-learn.",
@@ -145,6 +201,11 @@ export const portfolioData = {
 
   skillsMatrix: [
     {
+      category: "Machine Learning & NLP",
+      description: "Core AI/ML modeling, feature engineering, and text processing",
+      skills: ["Python", "PyTorch", "TensorFlow", "scikit-learn", "Machine Learning", "Deep Learning fundamentals", "NLP", "Text Classification", "Data Preprocessing", "Feature Extraction", "Model Evaluation", "NumPy"]
+    },
+    {
       category: "Generative AI & LLMs",
       description: "Multi-agent workflows, prompt design, and model orchestration",
       skills: ["Google Gemini", "LLMs", "Prompt Engineering", "LangChain", "LangGraph", "AI Agents", "Multi-Agent Systems", "Structured LLM Workflows", "AI Orchestration"]
@@ -152,12 +213,7 @@ export const portfolioData = {
     {
       category: "RAG & NLP",
       description: "Semantic search, vector indexing, and information extraction",
-      skills: ["Retrieval-Augmented Generation (RAG)", "Hugging Face Embeddings", "FAISS", "Vector Search", "Semantic Search", "Document Processing", "Text Chunking", "Information Extraction", "NLP"]
-    },
-    {
-      category: "AI / Machine Learning",
-      description: "Data modeling, deep learning fundamentals, and statistical ML",
-      skills: ["Python", "PyTorch", "scikit-learn", "Machine Learning", "Deep Learning fundamentals", "Text Classification", "Data Preprocessing", "Feature Extraction", "Model Evaluation"]
+      skills: ["Retrieval-Augmented Generation (RAG)", "Hugging Face Embeddings", "FAISS", "Vector Search", "Semantic Search", "Document Processing", "Text Chunking", "Information Extraction"]
     },
     {
       category: "AI Backend & Engineering",
@@ -177,7 +233,7 @@ export const portfolioData = {
     {
       category: "Product & Deployment",
       description: "SaaS monetization, cloud hosting, and developer tooling",
-      skills: ["Git & GitHub", "Vercel", "Railway", "Streamlit Cloud", "Razorpay Payments", "ReportLab PDF Engine", "VS Code", "Google Colab"]
+      skills: ["Git & GitHub", "Vercel", "Railway", "Streamlit Cloud", "Razorpay Payments", "ReportLab PDF Engine", "VS Code", "Google Colab", "Docker"]
     }
   ],
 
@@ -223,9 +279,8 @@ export const portfolioData = {
     institution: "Maharaja Surajmal Institute of Technology (MSIT)",
     location: "New Delhi, India",
     degree: "Bachelor of Technology (B.Tech) in Electronics & Communication Engineering",
-    cgpa: "8.197 (till 4th semester)",
+    cgpa: "8.2/10",
     graduationYear: "2028",
     coursework: ["Data Structures & Algorithms", "Object-Oriented Programming", "Machine Learning Fundamentals", "Database Management Systems", "Signals & Systems"]
   }
 };
-
