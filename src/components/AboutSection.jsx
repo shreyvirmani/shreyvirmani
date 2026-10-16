@@ -29,9 +29,9 @@ export default function AboutSection() {
               {personal.bio}
             </p>
             <p className="text-slate-400 leading-relaxed">
-              I bring hands-on experience across the complete AI application lifecycle — data processing, NLP,
+              I bring hands-on experience across the complete AI application lifecycle - data processing, NLP,
               embeddings, retrieval, LLM integration, multi-agent workflows, backend APIs, database integration,
-              deployment, and productization — with a strong track record in hackathons and student leadership.
+              deployment, and productization - with a strong track record in hackathons and student leadership.
             </p>
             <div className="grid sm:grid-cols-2 gap-3 pt-3">
               {pillars.map((p, i) => {

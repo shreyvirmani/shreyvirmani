@@ -75,7 +75,7 @@ export default function Hero() {
           </p>
 
           <p className="reveal mt-6 text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl">
-            I build AI/ML systems and AI applications — from{' '}
+            I build AI/ML systems and AI applications - from{' '}
             <span className="text-white">AI/ML pipelines and NLP systems</span> to{' '}
             <span className="text-white">RAG, multi-agent workflows, and full-stack deployment</span>.
           </p>

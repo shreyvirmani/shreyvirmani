@@ -18,7 +18,7 @@ export default function ProjectsSection() {
         <SectionHeading
           eyebrow="Selected Work"
           title="Real products, real pipelines"
-          description="Projects I've designed and shipped — spanning AI/ML systems, NLP pipelines, RAG, multi-agent AI, and full-stack platforms."
+          description="Projects I've designed and shipped - spanning AI/ML systems, NLP pipelines, RAG, multi-agent AI, and full-stack platforms."
         />
 
         {/* All projects in a single continuous grid */}

@@ -4,7 +4,7 @@ export const portfolioData = {
     title: "AI/ML Engineer | AI Applications Developer",
     tagline: "Building AI/ML systems, NLP pipelines, and practical AI applications.",
     positioning: "AI/ML Engineer focused on machine learning, NLP, and practical AI applications, with additional experience in Generative AI, RAG, and multi-agent systems.",
-    bio: "I am an AI/ML engineer with hands-on experience building machine learning systems, NLP pipelines, and practical AI applications. My work spans the complete AI/ML lifecycle — data processing, feature engineering, model training, NLP, retrieval systems, and deploying AI/ML-powered products. I also have experience with Generative AI, RAG pipelines, LLM integration, prompt engineering, multi-agent workflows, backend API development, and full-stack deployment.",
+    bio: "I am an AI/ML engineer with hands-on experience building machine learning systems, NLP pipelines, and practical AI applications. My work spans the complete AI/ML lifecycle - data processing, feature engineering, model training, NLP, retrieval systems, and deploying AI/ML-powered products. I also have experience with Generative AI, RAG pipelines, LLM integration, prompt engineering, multi-agent workflows, backend API development, and full-stack deployment.",
     location: "New Delhi, India",
     phone: "+91 9625465588",
     email: "shreyvirmani1905@gmail.com",
@@ -24,7 +24,7 @@ export const portfolioData = {
   projects: [
     {
       id: "tracera",
-      title: "Tracera — Website Risk Assessment",
+      title: "Tracera - Website Risk Assessment",
       subtitle: "Security Scanning & AI/ML-Based Risk Scoring",
       flagship: true,
       category: "AI/ML Systems",
@@ -38,12 +38,12 @@ export const portfolioData = {
         "17-feature ML schema with scikit-learn training (logistic regression, random forest, XGBoost) alongside a rule-based scoring baseline.",
         "Experimental Isolation Forest anomaly detector (synthetic-data experiment; not evaluated on labeled real-world data).",
         "FastAPI backend with Next.js frontend, scan history, and remediation reporting.",
-        "In development — no live demo deployed; source code public."
+        "In development - no live demo deployed; source code public."
       ]
     },
     {
       id: "pdf2ml-dataprep",
-      title: "PDF2ML DataPrep — PDF-to-AI/ML Converter",
+      title: "PDF2ML DataPrep - PDF-to-ML Converter",
       subtitle: "PDF Table Extraction to AI/ML-Ready Datasets",
       flagship: true,
       category: "Data Engineering",
@@ -69,7 +69,7 @@ export const portfolioData = {
       liveDemo: "https://hackmind-ai-copilot.vercel.app/",
       github: "https://github.com/shreyvirmani/HackMind-AI",
       tech: ["Google Gemini", "LLM Integration", "Agent Orchestration", "FastAPI", "WebSockets", "Next.js", "TypeScript", "Supabase/PostgreSQL", "Python", "Razorpay", "Vercel", "Railway"],
-      summary: "A full-stack Multi-Agent Generative AI platform for hackathon ideation, research, evaluation, prompt engineering, and project development — orchestrating 6 specialized AI agents that take a raw problem statement from first idea to a structured project pitch.",
+      summary: "A full-stack Multi-Agent Generative AI platform for hackathon ideation, research, evaluation, prompt engineering, and project development - orchestrating 6 specialized AI agents that take a raw problem statement from first idea to a structured project pitch.",
       description: `HackMind AI Copilot is an agentic AI product/workflow platform built as a full-stack SaaS. It orchestrates six specialized AI agents (Idea Generation, Planner, Research, Judge, Pitch, and LLM Prompt Generation) through a sequential, context-aware workflow powered by Google Gemini with a LangGraph-inspired orchestration pattern. The platform also ships an integrated conversational AI chatbot that lets users interact with their evolving project and receive contextual assistance throughout the entire development lifecycle. Features include Next.js/TypeScript on Vercel, a FastAPI backend, Supabase PostgreSQL, real-time workflow updates over WebSockets, automated PDF/PPT generation, and Razorpay-based payment integration.`,
       highlights: [
         "6-Agent Sequential Workflow: Idea Generation → Planner → Research → Judge → Pitch → LLM Prompt Generation.",
@@ -88,7 +88,7 @@ export const portfolioData = {
         },
         {
           name: "Planner Agent",
-          role: "Converts an idea into a structured project plan — features, architecture, tech stack, roadmap, and team roles."
+          role: "Converts an idea into a structured project plan - features, architecture, tech stack, roadmap, and team roles."
         },
         {
           name: "Research Agent",
@@ -110,7 +110,7 @@ export const portfolioData = {
     },
     {
       id: "clinguard-ai",
-      title: "ClinGuard AI — Healthcare AI Safety Evaluation Prototype",
+      title: "ClinGuard AI - Healthcare AI Safety Evaluation Prototype",
       subtitle: "Deterministic Safety Benchmark & Rule-Based Safeguards",
       flagship: true,
       category: "AI Safety",
@@ -123,7 +123,7 @@ export const portfolioData = {
         "29-case fictional benchmark with deterministic rule-based evaluation.",
         "Five-safeguard regex safety layer with re-evaluation of outputs.",
         "Passing cases improved from 10/29 to 21/29 on fixtures (one benign-case regression).",
-        "No live model calls; not clinically validated — educational prototype only.",
+        "No live model calls; not clinically validated - educational prototype only.",
         "Streamlit dashboard, audit exports, and 109-test pytest suite."
       ]
     },
@@ -170,7 +170,7 @@ export const portfolioData = {
       flagship: false,
       category: "Full-Stack AI",
       liveDemo: "https://sih-team-matcher.vercel.app/",
-      githubUnavailable: "No public repository — source is private.",
+      githubUnavailable: "No public repository - source is private.",
       tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL", "RLS"],
       summary: "Smart India Hackathon intelligent team-building platform that matches students based on complementary skill matrices and problem statements.",
       description: `Designed and architected a full-stack platform to solve student team formation challenges for Smart India Hackathon. Uses skill-based matching logic, compatibility scoring, and identification of missing technical roles. Connected to real-world outreach as Vice President of ISTE at MSIT.`,
@@ -255,7 +255,7 @@ export const portfolioData = {
       title: "Influencer Marketing Intern",
       organization: "MAD Influence",
       location: "Noida, India",
-      period: "Jun 2025 – Aug 2025",
+      period: "Jun 2025 - Aug 2025",
       type: "Industry Experience",
       points: [
         "Executed Instagram influencer marketing campaigns from strategic planning to post-campaign performance analytics.",
@@ -267,7 +267,7 @@ export const portfolioData = {
       title: "Influencer Marketing Intern",
       organization: "BuzzOne",
       location: "Delhi, India",
-      period: "Apr 2024 – Jul 2024",
+      period: "Apr 2024 - Jul 2024",
       type: "Industry Experience",
       points: [
         "Managed end-to-end influencer campaigns with 200+ creators from talent sourcing to campaign execution.",

@@ -11,7 +11,7 @@ import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 
 // The WebGL particle background pulls in three.js (~500 kB). Load it lazily so
-// it never blocks the first paint — the page is fully usable without it.
+// it never blocks the first paint - the page is fully usable without it.
 const ThreeScene = lazy(() => import('./components/ThreeScene'));
 
 const THEME_KEY = 'sv-portfolio-theme';

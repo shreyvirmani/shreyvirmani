@@ -93,7 +93,7 @@ export default function ContactSection() {
           <div className="space-y-4">
             <p className="text-slate-300 leading-relaxed mb-6">
               Whether you have a role to fill, an idea to prototype, or just want to talk AI/ML systems, NLP,
-              and RAG — my inbox is always open.
+              and RAG - my inbox is always open.
             </p>
 
             <div className="space-y-3">
