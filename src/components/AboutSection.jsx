@@ -8,21 +8,21 @@ export default function AboutSection() {
   const { personal } = portfolioData;
 
   const pillars = [
-    { icon: BrainCircuit, title: 'Generative AI & Agents', text: 'Multi-agent LLM workflows, prompt engineering, and orchestration.' },
-    { icon: Database, title: 'RAG & NLP', text: 'Vector search, FAISS, embeddings, and grounded document intelligence.' },
-    { icon: Layers, title: 'Full-Stack AI', text: 'LLM backends (FastAPI) paired with modern React/Next.js frontends.' },
-    { icon: Sparkles, title: 'Productization', text: 'From AI prototypes to deployable, monetized products on Vercel/Railway.' },
+    { icon: BrainCircuit, title: 'AI/ML & NLP Systems', text: 'Model training, feature engineering, text classification, and pipelines.' },
+    { icon: Database, title: 'RAG & Retrieval', text: 'Vector search, FAISS, embeddings, and grounded document intelligence.' },
+    { icon: Layers, title: 'GenAI & Agents', text: 'Multi-agent LLM workflows, prompt engineering, and orchestration.' },
+    { icon: Sparkles, title: 'Full-Stack Deployment', text: 'AI/ML backends (FastAPI) paired with modern React/Next.js frontends.' },
   ];
 
   return (
-    <section id="about" className="relative py-20 md:py-28">
+    <section id="about" className="relative py-16 md:py-24">
       <div className="container mx-auto px-4 md:px-6">
         <SectionHeading
           eyebrow="About Me"
           title="Engineer, builder, and problem-solver"
         />
 
-        <div className="grid lg:grid-cols-5 gap-8">
+        <div className="grid lg:grid-cols-5 gap-6">
           {/* Narrative */}
           <div className="lg:col-span-3 space-y-5">
             <p className="text-slate-300 leading-relaxed text-lg">
@@ -33,7 +33,7 @@ export default function AboutSection() {
               embeddings, retrieval, LLM integration, multi-agent workflows, backend APIs, database integration,
               deployment, and productization — with a strong track record in hackathons and student leadership.
             </p>
-            <div className="grid sm:grid-cols-2 gap-4 pt-4">
+            <div className="grid sm:grid-cols-2 gap-3 pt-3">
               {pillars.map((p, i) => {
                 const Icon = p.icon;
                 return (
@@ -63,7 +63,7 @@ export default function AboutSection() {
               <div className="mt-5 space-y-3">
                 <div className="flex items-center justify-between rounded-xl px-4 py-3 bg-white/5 border border-white/5">
                   <span className="text-sm text-slate-400">CGPA</span>
-                  <span className="font-mono font-bold text-cyan-300">8.197</span>
+                  <span className="font-mono font-bold text-cyan-300">8.2/10</span>
                 </div>
                 <div className="flex items-center justify-between rounded-xl px-4 py-3 bg-white/5 border border-white/5">
                   <span className="text-sm text-slate-400">Graduating</span>
@@ -71,7 +71,7 @@ export default function AboutSection() {
                 </div>
                 <div className="flex items-center justify-between rounded-xl px-4 py-3 bg-white/5 border border-white/5">
                   <span className="text-sm text-slate-400">Focus</span>
-                  <span className="text-sm font-medium text-slate-200">ML &amp; Computing</span>
+                  <span className="text-sm font-medium text-slate-200">AI/ML &amp; Computing</span>
                 </div>
               </div>
               <a

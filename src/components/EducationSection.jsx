@@ -8,7 +8,7 @@ export default function EducationSection() {
   const { education } = portfolioData;
 
   return (
-    <section id="education" className="relative py-20 md:py-28">
+    <section id="education" className="relative py-16 md:py-24">
       <div className="container mx-auto px-4 md:px-6 max-w-5xl">
         <SectionHeading eyebrow="Education" title="Academic foundation" align="center" />
 
@@ -37,7 +37,7 @@ export default function EducationSection() {
               </div>
               <div>
                 <div className="text-xs text-slate-400 font-mono">Cumulative CGPA</div>
-                <div className="text-lg font-bold font-mono text-cyan-300">8.197</div>
+                <div className="text-lg font-bold font-mono text-cyan-300">8.2/10</div>
               </div>
             </div>
             <div className="rounded-2xl bg-white/5 border border-white/10 p-4 flex items-center gap-3">
@@ -46,7 +46,7 @@ export default function EducationSection() {
               </div>
               <div>
                 <div className="text-xs text-slate-400 font-mono">Primary Focus</div>
-                <div className="text-sm font-semibold text-white">Electronics, Computing & ML</div>
+                <div className="text-sm font-semibold text-white">Electronics, Computing & AI/ML</div>
               </div>
             </div>
           </div>

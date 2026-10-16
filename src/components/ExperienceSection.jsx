@@ -7,7 +7,7 @@ export default function ExperienceSection() {
   const { experience } = portfolioData;
 
   return (
-    <section id="experience" className="relative py-20 md:py-28">
+    <section id="experience" className="relative py-16 md:py-24">
       <div className="container mx-auto px-4 md:px-6">
         <SectionHeading
           eyebrow="Experience"
@@ -18,7 +18,7 @@ export default function ExperienceSection() {
           {/* Vertical line */}
           <div className="absolute left-5 top-2 bottom-2 w-px bg-gradient-to-b from-cyan-400/40 via-indigo-500/30 to-transparent" />
 
-          <div className="space-y-8">
+          <div className="space-y-6">
             {experience.map((exp, i) => (
               <div key={i} className="relative pl-16">
                 {/* Node */}

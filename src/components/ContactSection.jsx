@@ -49,21 +49,21 @@ export default function ContactSection() {
   ];
 
   return (
-    <section id="contact" className="relative py-20 md:py-28">
+    <section id="contact" className="relative py-16 md:py-24">
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[400px] bg-[radial-gradient(ellipse_at_bottom,rgba(99,102,241,0.15),transparent_70%)]" />
       <div className="container mx-auto px-4 md:px-6 relative">
         <SectionHeading
           eyebrow="Contact"
           title="Let's build something intelligent"
-          description="I'm open to AI/ML engineering opportunities, Generative AI projects, collaborations, and hackathon initiatives."
+          description="I'm open to AI/ML engineering opportunities, AI/ML projects, Generative AI collaborations, and hackathon initiatives."
         />
 
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Left info */}
           <div className="space-y-4">
             <p className="text-slate-300 leading-relaxed mb-6">
-              Whether you have a role to fill, an idea to prototype, or just want to talk multi-agent systems and
-              RAG — my inbox is always open.
+              Whether you have a role to fill, an idea to prototype, or just want to talk AI/ML systems, NLP,
+              and RAG — my inbox is always open.
             </p>
 
             <div className="space-y-3">

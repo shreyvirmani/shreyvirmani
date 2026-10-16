@@ -4,10 +4,10 @@ import { portfolioData } from '../data/portfolioData';
 import { GithubIcon, LinkedinIcon, InstagramIcon } from './Icons';
 
 const ROLES = [
-  'AI & Machine Learning Engineer',
-  'Generative AI Developer',
-  'RAG & Multi-Agent Builder',
-  'Full-Stack Product Engineer',
+  'AI/ML Engineer',
+  'NLP & AI Systems Developer',
+  'Generative AI & RAG Practitioner',
+  'Full-Stack AI Applications Builder',
 ];
 
 function useTypewriter(words) {
@@ -45,7 +45,7 @@ export default function Hero() {
   const { personal, stats } = portfolioData;
 
   return (
-    <section id="home" className="relative min-h-screen flex flex-col justify-center pt-32 pb-16 overflow-hidden">
+    <section id="home" className="relative min-h-screen flex flex-col justify-center pt-32 pb-12 overflow-hidden">
       {/* Local aurora accent */}
       <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[600px] rounded-full bg-[radial-gradient(circle,rgba(56,189,248,0.14),rgba(129,140,248,0.08),transparent_70%)] pointer-events-none blur-2xl" />
 
@@ -53,7 +53,7 @@ export default function Hero() {
         <div className="max-w-3xl">
           <div className="reveal inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass text-xs font-mono text-slate-300">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            Open to AI/ML & Generative AI roles
+            Open to AI/ML Engineering & AI roles
           </div>
 
           <h1 className="reveal mt-6 text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.05] text-white">
@@ -69,9 +69,9 @@ export default function Hero() {
           </p>
 
           <p className="reveal mt-6 text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl">
-            I build production-grade AI products end-to-end — from{' '}
-            <span className="text-white">LLM-powered backends and RAG pipelines</span> to{' '}
-            <span className="text-white">multi-agent systems and modern React/Next.js frontends</span>.
+            I build production AI/ML systems and AI applications — from{' '}
+            <span className="text-white">AI/ML pipelines and NLP systems</span> to{' '}
+            <span className="text-white">RAG, multi-agent workflows, and full-stack deployment</span>.
           </p>
 
           {/* CTAs */}

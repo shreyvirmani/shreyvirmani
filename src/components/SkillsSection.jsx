@@ -38,7 +38,7 @@ const SKILLS = [
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="relative py-20 md:py-28">
+    <section id="skills" className="relative py-16 md:py-24">
       <div className="container mx-auto px-4 md:px-6">
         <SectionHeading
           eyebrow="Skills & Tools"
@@ -46,7 +46,7 @@ export default function SkillsSection() {
           description="The languages, frameworks, and platforms I use to ship production AI products."
         />
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5">
           {SKILLS.map((skill, i) => {
             const Icon = skill.icon;
             return (
