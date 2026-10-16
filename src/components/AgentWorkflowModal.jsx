@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import {
   X, CheckCircle2, ArrowRight, Lightbulb, Brain, Search, Scale,
   Presentation, Terminal, Bot, Layers,
@@ -157,9 +158,9 @@ export default function AgentWorkflowModal({ isOpen, onClose }) {
 
   const currentAgent = agents.find((a) => a.id === activeTab) || agents[0];
 
-  return (
+  return createPortal(
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md overflow-y-auto"
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md overflow-y-auto"
       onMouseDown={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
@@ -297,6 +298,7 @@ export default function AgentWorkflowModal({ isOpen, onClose }) {
           </a>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }
