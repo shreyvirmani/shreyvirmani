@@ -16,7 +16,7 @@ export default function ProjectsSection() {
     <section id="projects" className="relative py-16 md:py-24">
       <div className="container mx-auto px-4 md:px-6">
         <SectionHeading
-          eyebrow="Selected Work"
+          eyebrow="What I Build"
           title="Real products, real pipelines"
           description="Projects I've designed and shipped - spanning AI/ML systems, NLP pipelines, RAG, multi-agent AI, and full-stack platforms."
         />
