@@ -5,11 +5,13 @@ import {
   SiPostgresql, SiSupabase, SiMongodb, SiMysql, SiDocker,
   SiGit, SiGithub, SiVercel, SiStreamlit, SiHuggingface,
   SiGooglecolab, SiGoogle, SiNumpy, SiPandas,
+  SiCplusplus, SiCelery, SiRailway, SiPytest,
 } from 'react-icons/si';
 import SectionHeading from './SectionHeading';
 
 const SKILLS = [
   { name: 'Python', icon: SiPython, color: '#3776ab' },
+  { name: 'C++', icon: SiCplusplus, color: '#00599c' },
   { name: 'PyTorch', icon: SiPytorch, color: '#ee4c2c' },
   { name: 'TensorFlow', icon: SiTensorflow, color: '#ff6f00' },
   { name: 'scikit-learn', icon: SiScikitlearn, color: '#f7931e' },
@@ -19,6 +21,7 @@ const SKILLS = [
   { name: 'Google Gemini', icon: SiGoogle, color: '#4285f4' },
   { name: 'Hugging Face', icon: SiHuggingface, color: '#ffd21e' },
   { name: 'FastAPI', icon: SiFastapi, color: '#009688' },
+  { name: 'Celery', icon: SiCelery, color: '#37814a' },
   { name: 'Next.js', icon: SiNextdotjs, color: '#ffffff' },
   { name: 'React', icon: SiReact, color: '#61dafb' },
   { name: 'TypeScript', icon: SiTypescript, color: '#3178c6' },
@@ -29,10 +32,12 @@ const SKILLS = [
   { name: 'MongoDB', icon: SiMongodb, color: '#47a248' },
   { name: 'MySQL', icon: SiMysql, color: '#4479a1' },
   { name: 'Git', icon: SiGit, color: '#f05032' },
-  { name: 'Docker', icon: SiDocker, color: '#2496ed' },
-  { name: 'Vercel', icon: SiVercel, color: '#ffffff' },
-  { name: 'Google Colab', icon: SiGooglecolab, color: '#f9ab00' },
   { name: 'GitHub', icon: SiGithub, color: '#ffffff' },
+  { name: 'Docker', icon: SiDocker, color: '#2496ed' },
+  { name: 'pytest', icon: SiPytest, color: '#0a9edc' },
+  { name: 'Vercel', icon: SiVercel, color: '#ffffff' },
+  { name: 'Railway', icon: SiRailway, color: '#ffffff' },
+  { name: 'Google Colab', icon: SiGooglecolab, color: '#f9ab00' },
 ];
 
 export default function SkillsSection() {

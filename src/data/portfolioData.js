@@ -3,8 +3,8 @@ export const portfolioData = {
     name: "Shrey Virmani",
     title: "AI/ML Engineer | AI Applications Developer",
     tagline: "Building AI/ML systems, NLP pipelines, and practical AI applications.",
-    positioning: "AI/ML Engineer focused on machine learning, NLP, and practical AI applications, with additional experience in Generative AI, RAG, and multi-agent systems.",
-    bio: "I am an AI/ML engineer with hands-on experience building machine learning systems, NLP pipelines, and practical AI applications. My work spans the complete AI/ML lifecycle - data processing, feature engineering, model training, NLP, retrieval systems, and deploying AI/ML-powered products. I also have experience with Generative AI, RAG pipelines, LLM integration, prompt engineering, multi-agent workflows, backend API development, and full-stack deployment.",
+    positioning: "Software & AI Engineering student focused on building production-oriented applications across Generative AI, Machine Learning, backend systems, and modern web development. Experienced with Python, FastAPI, React/Next.js, LLMs, RAG pipelines, multi-agent systems, and ML workflows, with hands-on experience deploying full-stack AI products.",
+    bio: "I am a Software & AI Engineering student focused on building production-oriented applications across Generative AI, Machine Learning, backend systems, and modern web development. My work spans the complete AI/ML lifecycle - data processing, feature engineering, model training, NLP, retrieval systems, and deploying AI/ML-powered products. Experienced with Python, FastAPI, React/Next.js, LLMs, RAG pipelines, multi-agent systems, and ML workflows, with hands-on experience deploying full-stack AI products.",
     location: "New Delhi, India",
     phone: "+91 9625465588",
     email: "shreyvirmani1905@gmail.com",
@@ -12,6 +12,7 @@ export const portfolioData = {
     githubUsername: "shreyvirmani",
     linkedin: "https://www.linkedin.com/in/shrey-virmani",
     instagram: "https://www.instagram.com/shrey_virmani",
+    resume: "/resume.pdf",
   },
   
   stats: [
@@ -23,63 +24,23 @@ export const portfolioData = {
 
   projects: [
     {
-      id: "tracera",
-      title: "Tracera - Website Risk Assessment",
-      subtitle: "Security Scanning & AI/ML-Based Risk Scoring",
-      flagship: true,
-      category: "AI/ML Systems",
-      status: "In development",
-      github: "https://github.com/shreyvirmani/Tracera",
-      tech: ["Python", "scikit-learn", "FastAPI", "Next.js", "PostgreSQL"],
-      summary: "Scans websites for security misconfigurations including insecure cookies, missing security headers, and HTTP/TLS issues, then produces severity-based risk scores and remediation reports.",
-      description: `Tracera combines a deterministic scanning engine with 15 registered rule-based checks and a 17-feature ML schema (MLFeaturesV1) used for model training to detect security misconfigurations. An experimental Isolation Forest anomaly detector was prototyped on synthetic data but has not been evaluated on labeled real-world data. The FastAPI backend integrates with a Next.js frontend for scan history and reporting workflows. No deployed demo is available; the source code is public.`,
-      highlights: [
-        "15 deterministic rule-based security checks covering headers, cookies, configuration disclosure, CORS, and performance.",
-        "17-feature ML schema with scikit-learn training (logistic regression, random forest, XGBoost) alongside a rule-based scoring baseline.",
-        "Experimental Isolation Forest anomaly detector (synthetic-data experiment; not evaluated on labeled real-world data).",
-        "FastAPI backend with Next.js frontend, scan history, and remediation reporting.",
-        "In development - no live demo deployed; source code public."
-      ]
-    },
-    {
-      id: "pdf2ml-dataprep",
-      title: "PDF2ML DataPrep - PDF-to-ML Converter",
-      subtitle: "PDF Table Extraction to AI/ML-Ready Datasets",
-      flagship: true,
-      category: "Data Engineering",
-      liveDemo: "https://pdf2ml.streamlit.app/",
-      github: "https://github.com/shreyvirmani/PDF2ML",
-      tech: ["Python", "FastAPI", "Streamlit", "Camelot", "pandas", "Celery"],
-      summary: "Extracts tables and text from PDFs using Camelot, Tabula, and pdfminer and converts them into cleaned, AI/ML-ready CSV/XLSX datasets.",
-      description: `PDF2ML DataPrep extracts structured data from PDFs using Camelot, Tabula, and pdfminer, then applies configurable cleaning and schema inference with pandas to produce AI/ML-ready datasets. Built with a FastAPI backend, Celery/Redis background jobs, S3-compatible storage, a Streamlit interface, Docker, and pytest.`,
-      highlights: [
-        "Multi-engine PDF extraction: Camelot, Tabula, and pdfminer for tables and text.",
-        "Configurable data cleaning and schema inference with pandas.",
-        "FastAPI backend with Celery/Redis async job processing.",
-        "S3-compatible storage, Docker containerization, and pytest test suite.",
-        "Streamlit interface for interactive conversion workflows."
-      ]
-    },
-    {
       id: "hackmind-ai",
-      title: "HackMind AI Copilot",
+      title: "HackMind AI Copilot - Multi-Agent AI Platform",
       subtitle: "Full-Stack Multi-Agent Generative AI Platform",
       flagship: true,
       category: "Agentic AI",
       liveDemo: "https://hackmind-ai-copilot.vercel.app/",
       github: "https://github.com/shreyvirmani/HackMind-AI",
-      tech: ["Google Gemini", "LLM Integration", "Agent Orchestration", "FastAPI", "WebSockets", "Next.js", "TypeScript", "Supabase/PostgreSQL", "Python", "Razorpay", "Vercel", "Railway"],
-      summary: "A full-stack Multi-Agent Generative AI platform for hackathon ideation, research, evaluation, prompt engineering, and project development - orchestrating 6 specialized AI agents that take a raw problem statement from first idea to a structured project pitch.",
-      description: `HackMind AI Copilot is an agentic AI product/workflow platform built as a full-stack SaaS. It orchestrates six specialized AI agents (Idea Generation, Planner, Research, Judge, Pitch, and LLM Prompt Generation) through a sequential, context-aware workflow powered by Google Gemini with a LangGraph-inspired orchestration pattern. The platform also ships an integrated conversational AI chatbot that lets users interact with their evolving project and receive contextual assistance throughout the entire development lifecycle. Features include Next.js/TypeScript on Vercel, a FastAPI backend, Supabase PostgreSQL, real-time workflow updates over WebSockets, automated PDF/PPT generation, and Razorpay-based payment integration.`,
+      tech: ["Google Gemini", "Next.js", "React", "TypeScript", "FastAPI", "Supabase", "PostgreSQL", "WebSockets", "REST APIs", "Agent Orchestration", "Python", "Razorpay", "Vercel", "Railway"],
+      summary: "Multi-agent AI platform used by 30-50 users to transform hackathon problem statements into structured ideas, plans, research, judging insights, and pitch content.",
+      description: `Built and deployed a multi-agent AI platform used by 30-50 users to transform hackathon problem statements into structured ideas, plans, research, judging insights, and pitch content. Engineered the full-stack system with 6 specialized AI agents (Idea Generation, Planner, Research, Judge, Pitch, and LLM Prompt Generation), REST APIs, WebSockets, authentication, usage limits, project history, PDF/PPT generation, and Gemini-based generation with fallback handling.`,
       highlights: [
+        "Built and deployed a multi-agent AI platform used by 30-50 users to transform hackathon problem statements into structured ideas, plans, research, judging insights, and pitch content.",
+        "Engineered the full-stack system with 6 specialized AI agents, REST APIs, WebSockets, authentication, usage limits, project history, PDF/PPT generation, and Gemini-based generation with fallback handling.",
         "6-Agent Sequential Workflow: Idea Generation → Planner → Research → Judge → Pitch → LLM Prompt Generation.",
         "Multi-Agent AI architecture with Gemini/LLM integration and LangGraph-inspired orchestration pattern.",
-        "Agentic, context-aware AI workflows that carry project context across every stage.",
-        "Idea generation from problem statements, domains, and requirements; research & competitive analysis.",
         "AI-based project judging with weakness detection, scoring, and actionable improvements.",
-        "Automated pitch generation and optimized task-specific LLM prompts for implementation.",
-        "HackMind AI Copilot: integrated conversational AI chatbot for contextual project assistance.",
-        "PDF/PPT generation, real-time WebSocket workflow updates, and Razorpay payment integration."
+        "Integrated conversational AI chatbot for contextual project assistance and Razorpay payment integration."
       ],
       agents: [
         {
@@ -109,6 +70,82 @@ export const portfolioData = {
       ]
     },
     {
+      id: "tracera",
+      title: "Tracera - Website Risk Assessment Platform",
+      subtitle: "Security Scanning & AI/ML-Based Risk Scoring",
+      flagship: true,
+      category: "AI/ML Systems",
+      status: "In development",
+      github: "https://github.com/shreyvirmani/Tracera",
+      tech: ["Python", "scikit-learn", "FastAPI", "Next.js", "PostgreSQL"],
+      summary: "Website analysis platform that detects security/configuration issues including insecure cookies, missing security headers, and HTTP/TLS misconfigurations, producing severity-based risk reports and remediation guidance.",
+      description: `Built a website analysis platform that detects security/configuration issues including insecure cookies, missing security headers, and HTTP/TLS misconfigurations, producing severity-based risk reports and remediation guidance. Developed a deterministic scanning and feature-extraction pipeline with 15 registered security rules and a 17-feature ML schema, alongside an experimental Isolation Forest anomaly-detection workflow.`,
+      highlights: [
+        "Built a website analysis platform that detects security/configuration issues including insecure cookies, missing security headers, and HTTP/TLS misconfigurations, producing severity-based risk reports and remediation guidance.",
+        "Developed a deterministic scanning and feature-extraction pipeline with 15 registered security rules and a 17-feature ML schema, alongside an experimental Isolation Forest anomaly-detection workflow.",
+        "15 deterministic rule-based security checks covering headers, cookies, configuration disclosure, CORS, and performance.",
+        "FastAPI backend with Next.js frontend, scan history, and remediation reporting.",
+        "In development - no live demo deployed; source code public."
+      ]
+    },
+    {
+      id: "rag-pdf-assistant",
+      title: "RAG PDF Assistant",
+      subtitle: "Document Intelligence & Semantic Q&A System",
+      flagship: true,
+      category: "RAG & NLP",
+      liveDemo: "https://pdf-app-rag.streamlit.app/",
+      github: "https://github.com/shreyvirmani/PDF-QA-RAG",
+      tech: ["Python", "LangChain", "FAISS", "Google Gemini", "Hugging Face Embeddings", "Streamlit"],
+      summary: "Retrieval-Augmented Generation pipeline that ingests, chunks, embeds, and indexes documents in FAISS for semantic retrieval before supplying relevant context to Gemini.",
+      description: `Built a Retrieval-Augmented Generation pipeline that ingests, chunks, embeds, and indexes documents in FAISS for semantic retrieval before supplying relevant context to Gemini. Tested the end-to-end retrieval and question-answering workflow across 20-25 PDFs through a Streamlit interface for document upload and grounded Q&A.`,
+      highlights: [
+        "Built a Retrieval-Augmented Generation pipeline that ingests, chunks, embeds, and indexes documents in FAISS for semantic retrieval before supplying relevant context to Gemini.",
+        "Tested the end-to-end retrieval and question-answering workflow across 20-25 PDFs through a Streamlit interface for document upload and grounded Q&A.",
+        "Ingests and parses complex PDF documents with recursive character text chunking.",
+        "Dense vector representations generated with Hugging Face Embeddings and indexed in FAISS.",
+        "Semantic similarity retrieval and context injection into Google Gemini prompts with grounded source citations."
+      ]
+    },
+    {
+      id: "pdf2ml-dataprep",
+      title: "PDF2ML DataPrep - PDF-to-ML Data Pipeline",
+      subtitle: "PDF Table Extraction to AI/ML-Ready Datasets",
+      flagship: true,
+      category: "Data Engineering",
+      liveDemo: "https://pdf2ml.streamlit.app/",
+      github: "https://github.com/shreyvirmani/PDF2ML",
+      tech: ["Python", "FastAPI", "Streamlit", "Camelot", "pandas", "Celery", "Redis", "Docker", "pytest"],
+      summary: "Data-preparation platform that extracts tables/text from PDFs and converts them into cleaned, ML-ready CSV/XLSX datasets with automated cleaning and schema inference.",
+      description: `Built a data-preparation platform that extracts tables/text from PDFs and converts them into cleaned, ML-ready CSV/XLSX datasets with automated cleaning and schema inference. Applied the pipeline to clean 4 datasets containing 200+ PDFs for SIF Sentinel, an SIH project developed for Oil India, using asynchronous FastAPI/Celery processing and Streamlit-based workflows.`,
+      highlights: [
+        "Built a data-preparation platform that extracts tables/text from PDFs and converts them into cleaned, ML-ready CSV/XLSX datasets with automated cleaning and schema inference.",
+        "Applied the pipeline to clean 4 datasets containing 200+ PDFs for SIF Sentinel, an SIH project developed for Oil India, using asynchronous FastAPI/Celery processing and Streamlit-based workflows.",
+        "Multi-engine PDF extraction using Camelot, Tabula, and pdfminer for structured tables and text.",
+        "Configurable data cleaning and automated schema inference with pandas.",
+        "FastAPI backend with Celery/Redis async job processing, S3-compatible storage, Docker, and pytest test suite."
+      ]
+    },
+    {
+      id: "sih-team-matcher",
+      title: "SIH Team Matcher",
+      subtitle: "Teammate-Discovery & Collaboration Platform",
+      flagship: true,
+      category: "Full-Stack AI & Web",
+      liveDemo: "https://sih-team-matcher.vercel.app/",
+      githubUnavailable: "Private repository - live demo available.",
+      tech: ["Next.js", "React", "JavaScript", "FastAPI", "Supabase", "PostgreSQL", "Tailwind CSS"],
+      summary: "Teammate-discovery platform used by 100-120 logged-in users, allowing participants to find teammates based on stated requirements and send or receive collaboration requests.",
+      description: `Built a teammate-discovery platform used by 100-120 logged-in users, allowing participants to find teammates based on their stated requirements and send or receive collaboration requests. Implemented a user-controlled request workflow where participants can accept or reject teammate requests, enabling flexible team formation instead of forced matching.`,
+      highlights: [
+        "Built a teammate-discovery platform used by 100-120 logged-in users, allowing participants to find teammates based on their stated requirements and send or receive collaboration requests.",
+        "Implemented a user-controlled request workflow where participants can accept or reject teammate requests, enabling flexible team formation instead of forced matching.",
+        "Skill-based matchmaking logic and compatibility scoring between candidate profiles and problem statement requirements.",
+        "FastAPI backend with Supabase PostgreSQL, Row Level Security (RLS), and responsive Next.js/React frontend.",
+        "Backed by leadership experience coordinating candidate screening and team formation at MSIT."
+      ]
+    },
+    {
       id: "clinguard-ai",
       title: "ClinGuard AI - Healthcare AI Safety Evaluation Prototype",
       subtitle: "Deterministic Safety Benchmark & Rule-Based Safeguards",
@@ -128,24 +165,6 @@ export const portfolioData = {
       ]
     },
     {
-      id: "rag-pdf-assistant",
-      title: "RAG PDF Assistant",
-      subtitle: "Document Intelligence & Semantic Q&A System",
-      flagship: true,
-      category: "RAG & NLP",
-      liveDemo: "https://pdf-app-rag.streamlit.app/",
-      github: "https://github.com/shreyvirmani/PDF-QA-RAG",
-      tech: ["Python", "LangChain", "FAISS", "Hugging Face Embeddings", "Google Gemini API", "Streamlit"],
-      summary: "End-to-end Retrieval-Augmented Generation application enabling natural language interrogation of PDF documents with grounded source citations.",
-      description: `Constructed a RAG pipeline encompassing document parsing, recursive text chunking, dense vector embeddings via Hugging Face, similarity search in FAISS, and context-injected prompt synthesis with Google Gemini, with retrieved source passages displayed alongside answers so responses stay grounded in the source document.`,
-      highlights: [
-        "Ingests and parses complex PDF documents with recursive character text chunking.",
-        "Dense vector representations generated with Hugging Face Embeddings and indexed in FAISS.",
-        "Semantic similarity retrieval and context injection into Google Gemini prompts.",
-        "Deployed with an intuitive interactive UI using Streamlit Cloud."
-      ]
-    },
-    {
       id: "ai-resume-analyzer",
       title: "AI Resume Analyzer",
       subtitle: "Intelligent ATS Resume & Career Assessment Engine",
@@ -161,24 +180,6 @@ export const portfolioData = {
         "Automated ATS score evaluation with actionable improvement feedback.",
         "Role-tailored interview question generator based on candidate profile.",
         "Automated PDF feedback report generation using ReportLab."
-      ]
-    },
-    {
-      id: "sih-team-matcher",
-      title: "SIH Team Matcher",
-      subtitle: "Intelligent Skill-Based Hackathon Teammate Matching Platform",
-      flagship: false,
-      category: "Full-Stack AI",
-      liveDemo: "https://sih-team-matcher.vercel.app/",
-      githubUnavailable: "No public repository - source is private.",
-      tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL", "RLS"],
-      summary: "Smart India Hackathon intelligent team-building platform that matches students based on complementary skill matrices and problem statements.",
-      description: `Designed and architected a full-stack platform to solve student team formation challenges for Smart India Hackathon. Uses skill-based matching logic, compatibility scoring, and identification of missing technical roles. Connected to real-world outreach as Vice President of ISTE at MSIT.`,
-      highlights: [
-        "Recommendation & compatibility scoring between candidate skills and problem requirements.",
-        "Role discovery, team requests, automated notifications, and gap identification.",
-        "Secure database architecture using Supabase PostgreSQL with Row Level Security (RLS).",
-        "Backed by leadership experience coordinating student candidate screening and team formation at MSIT."
       ]
     },
     {
@@ -202,43 +203,74 @@ export const portfolioData = {
 
   skillsMatrix: [
     {
-      category: "Machine Learning & NLP",
-      description: "Core AI/ML modeling, feature engineering, and text processing",
-      skills: ["Python", "PyTorch", "TensorFlow", "scikit-learn", "Machine Learning", "Deep Learning fundamentals", "NLP", "Text Classification", "Data Preprocessing", "Feature Extraction", "Model Evaluation", "NumPy"]
+      category: "Languages",
+      description: "Core programming languages for AI systems, backend, and web",
+      skills: ["Python", "C++", "C", "JavaScript", "TypeScript"]
     },
     {
-      category: "Generative AI & LLMs",
+      category: "AI & Machine Learning",
+      description: "Core AI/ML modeling, feature engineering, and evaluation",
+      skills: ["scikit-learn", "PyTorch", "NLP", "Deep Learning", "Feature Engineering", "Anomaly Detection", "Model Evaluation", "pandas", "NumPy", "TensorFlow", "Text Classification"]
+    },
+    {
+      category: "Generative AI",
       description: "Multi-agent workflows, prompt design, and model orchestration",
-      skills: ["Google Gemini", "LLMs", "Prompt Engineering", "LangChain", "LangGraph", "AI Agents", "Multi-Agent Systems", "Structured LLM Workflows", "AI Orchestration"]
+      skills: ["LLMs", "Google Gemini", "RAG", "LangChain", "AI Agents", "Prompt Engineering", "FAISS", "Hugging Face Embeddings", "Multi-Agent Systems", "LangGraph", "AI Orchestration"]
     },
     {
-      category: "RAG & NLP",
-      description: "Semantic search, vector indexing, and information extraction",
-      skills: ["Retrieval-Augmented Generation (RAG)", "Hugging Face Embeddings", "FAISS", "Vector Search", "Semantic Search", "Document Processing", "Text Chunking", "Information Extraction"]
-    },
-    {
-      category: "AI Backend & Engineering",
-      description: "Scalable APIs, asynchronous tasks, and database integration",
-      skills: ["FastAPI", "REST APIs", "WebSockets", "Async AI Workflows", "API Integration", "AI Backend Architecture", "Pydantic"]
-    },
-    {
-      category: "Full-Stack Development",
+      category: "Frontend",
       description: "Modern web applications and reactive user interfaces",
-      skills: ["Next.js", "React", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS"]
+      skills: ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "Streamlit", "HTML5", "CSS3"]
     },
     {
-      category: "Databases & Storage",
+      category: "Backend",
+      description: "Scalable APIs, asynchronous task queues, and services",
+      skills: ["FastAPI", "REST APIs", "WebSockets", "Celery", "SQLAlchemy", "Async AI Workflows", "API Integration", "Pydantic"]
+    },
+    {
+      category: "Databases",
       description: "Relational, document, and high-dimensional vector stores",
-      skills: ["Supabase", "PostgreSQL", "MongoDB", "MySQL", "FAISS Vector DB"]
+      skills: ["PostgreSQL", "Supabase", "SQLAlchemy", "MongoDB", "MySQL", "FAISS Vector DB"]
     },
     {
-      category: "Product & Deployment",
-      description: "SaaS monetization, cloud hosting, and developer tooling",
-      skills: ["Git & GitHub", "Vercel", "Railway", "Streamlit Cloud", "Razorpay Payments", "ReportLab PDF Engine", "VS Code", "Google Colab", "Docker"]
+      category: "Tools & Deployment",
+      description: "Containerization, testing, CI/CD, and cloud hosting",
+      skills: ["Git", "GitHub", "Docker", "pytest", "Vercel", "Railway", "Streamlit Cloud", "Camelot", "Razorpay Payments", "ReportLab PDF Engine", "VS Code", "Google Colab"]
     }
   ],
 
   experience: [
+    {
+      title: "Web Development and SEO Intern",
+      organization: "WEBSETGRAM",
+      location: "Remote",
+      period: "15 Jun 2026 - 31 Jul 2026",
+      type: "Industry Experience",
+      points: [
+        "Completed a 6-week remote internship focused on web development and SEO, contributing to practical website development and optimization tasks.",
+        "Applied frontend/web development skills in a professional environment while working on website-related requirements and SEO-oriented development practices."
+      ]
+    },
+    {
+      title: "Influencer Marketing Intern",
+      organization: "MAD Influence",
+      location: "Noida, India",
+      period: "13 Jun 2025 - 13 Aug 2025",
+      type: "Industry Experience",
+      points: [
+        "Executed Instagram influencer campaigns end-to-end and built a 500+ influencer database, analyzing engagement and ROI metrics."
+      ]
+    },
+    {
+      title: "Influencer Marketing Intern",
+      organization: "BuzzOne",
+      location: "Delhi, India",
+      period: "15 Apr 2024 - 31 Jul 2024",
+      type: "Industry Experience",
+      points: [
+        "Managed Instagram campaigns involving 200+ creators, coordinating sourcing, execution, deliverables, and performance tracking."
+      ]
+    },
     {
       title: "Vice President",
       organization: "ISTE MSIT (Indian Society for Technical Education)",
@@ -250,36 +282,13 @@ export const portfolioData = {
         "Managed Smart India Hackathon (SIH) team formation, candidate screening, technical interviews, and platform outreach.",
         "Mentored student developers on AI/ML project ideation, architectural design, and presentation pitching."
       ]
-    },
-    {
-      title: "Influencer Marketing Intern",
-      organization: "MAD Influence",
-      location: "Noida, India",
-      period: "Jun 2025 - Aug 2025",
-      type: "Industry Experience",
-      points: [
-        "Executed Instagram influencer marketing campaigns from strategic planning to post-campaign performance analytics.",
-        "Developed and maintained a 500+ influencer database and managed creator partnerships.",
-        "Analyzed campaign metrics to optimize engagement rates and project ROI."
-      ]
-    },
-    {
-      title: "Influencer Marketing Intern",
-      organization: "BuzzOne",
-      location: "Delhi, India",
-      period: "Apr 2024 - Jul 2024",
-      type: "Industry Experience",
-      points: [
-        "Managed end-to-end influencer campaigns with 200+ creators from talent sourcing to campaign execution.",
-        "Coordinated campaign delivery schedules and analyzed performance data to drive higher audience engagement."
-      ]
     }
   ],
 
   education: {
-    institution: "Maharaja Surajmal Institute of Technology (MSIT)",
+    institution: "Maharaja Surajmal Institute of Technology",
     location: "New Delhi, India",
-    degree: "Bachelor of Technology (B.Tech) in Electronics & Communication Engineering",
+    degree: "B.Tech, Electronics & Communication Engineering",
     cgpa: "8.2/10",
     graduationYear: "2028",
     coursework: ["Data Structures & Algorithms", "Object-Oriented Programming", "Machine Learning Fundamentals", "Database Management Systems", "Signals & Systems"]

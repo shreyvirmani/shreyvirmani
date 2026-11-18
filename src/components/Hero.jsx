@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ArrowRight, ExternalLink, Mail, MapPin } from 'lucide-react';
+import { ArrowRight, ExternalLink, Mail, MapPin, FileText } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 import { GithubIcon, LinkedinIcon, InstagramIcon } from './Icons';
 
@@ -95,6 +95,15 @@ export default function Hero() {
             >
               <Mail className="w-4 h-4" />
               Get in Touch
+            </a>
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium text-slate-100 glass hover:border-cyan-400/40 transition-all hover:-translate-y-0.5"
+            >
+              <FileText className="w-4 h-4 text-cyan-400" />
+              Resume
             </a>
           </div>
 
